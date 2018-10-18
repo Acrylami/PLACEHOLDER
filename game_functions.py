@@ -82,10 +82,9 @@ def refine_words(text):
     ]
 
     with open('stop.txt', 'r') as f_obj:
-
         words_wanted = []
         for item in text:
-            if item not in disposable_words:
+            if item not in f_obj.readline():
                 words_wanted.append(item)
 
         return words_wanted
