@@ -16,7 +16,7 @@ def game():
         gf.print_dialogue(current_dialogue)
         gf.print_room(current_room)
         gf.print_inventory(player.inventory)
-        gf.print_menu()
+        gf.main()
         # don't take out
         break
 
@@ -25,4 +25,3 @@ if __name__ == '__main__':
     game()
 
 #test
-
