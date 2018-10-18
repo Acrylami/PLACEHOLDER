@@ -7,17 +7,19 @@ from main import current_dialogue, current_room    # global variables to update
 import string
 
 
-def print_room(room):
+def print_room():
     """Will take a room as an argument, and display all of its contents"""
+    global current_room
     print()
-    print('You are in the ' + room['name'].upper())
+    print('You are in the ' + current_room['name'].upper())
     print()
 
 
-def print_dialogue(dialogue):
+def print_dialogue():
     """Will take a form of dialogue as an argument, and display it properly"""
+    global current_dialogue
     print()
-    print(dialogue.upper())
+    print(current_dialogue.upper())
     print()
 
 
@@ -28,7 +30,8 @@ def exit_leads_to(exits, direction):
 
 def is_exit_valid(exits, direction):
     if direction in exits:
-        return exits[direction]
+        return True
+    return False
 
 
 def move(exits, direction):
@@ -67,26 +70,17 @@ def no_punct(text):
 
 
 def refine_words(text):
-    disposable_words = [
-        'a', 'aa', 'aaa',  'an', 'and', 'the', 'be', 'to', 'of', 'in', 'that',
-        'have', 'i', 'it', 'for', 'not', 'on', 'with', 'he', 'as', 'you', 'do',
-        'at', 'this', 'but', 'his', 'by', 'from', 'they', 'we', 'say', 'her',
-        'she', 'or', 'will', 'my', 'one', 'all' , 'would', 'there', 'their',
-        'what', 'so', 'up', 'out', 'if', 'about', 'who', 'get', 'which', 'me',
-        'when', 'make', 'can', 'like', 'time', 'no', 'just', 'him', 'know',
-        'take', 'people', 'into', 'year', 'good', 'some', 'could', 'them',
-        'see', 'other', 'than', 'then', 'now', 'look', 'only', 'come', 'its',
-        'over', 'think', 'also', 'back', 'after', 'two', 'how', 'our', 'work',
-        'first', 'well', 'way', 'even', 'new', 'want', 'because', 'any',
-        'these', 'give', 'day', 'most', 'us',
-    ]
+    """Compare the user input with the text document, if both words do no
+    appear, then add that word from user input to the filtered list"""
 
     with open('stop.txt', 'r') as f_obj:
+        skip = f_obj.readlines()
+        skip = ''.join(skip)
+        skip = skip.split('\n')
         words_wanted = []
         for item in text:
-            if item not in f_obj.readline():
+            if not(item in skip):
                 words_wanted.append(item)
-
         return words_wanted
 
 
@@ -102,7 +96,12 @@ def normal_input(user_input):
 
 
 def exe_go(user_input_command):
-    pass
+    global current_room
+    exit = is_exit_valid(current_room['exits'], user_input_command)
+    if exit:
+        current_room = move(current_room['exits'], user_input_command)
+    else:
+        print("You cannot go there.")
 
 
 def exe_take(user_input_command):
@@ -204,4 +203,4 @@ def main():
     # normal the input
     normal_user_input = normal_input(user_input)
 
-    return normal_user_input
+    exe_command(normal_user_input)
