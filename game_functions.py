@@ -104,8 +104,30 @@ def exe_go(user_input_command):
         print("You cannot go there.")
 
 
-def exe_take(user_input_command):
-    pass
+def exe_take(item_id):
+    """given the item id, the player can pickup objects from the room,
+    and this will be added to the player inventory, and removed from the
+    current room items"""
+    global current_room
+    global inventory
+
+    try:
+        item_in_room = items_id[item_id]
+
+        if current_room['items']:
+            item_lst = current_room['items']
+
+            if item_in_room not in item_lst:
+                print('You cannot take this')
+
+            for item in item_lst:
+                print(item)
+                if item == item_in_room:
+                    inventory.append(item)
+                    current_room['items'].remove(item)
+
+    except KeyError:
+        print('You cannot take this')
 
 
 def exe_solve_riddle(user_input_command):
