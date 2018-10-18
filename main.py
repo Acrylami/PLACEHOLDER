@@ -3,6 +3,7 @@ import player
 import game_functions as gf    # all functions are referred as 'gf' now
 import game_content as gc    # all dialogue are referred as 'gc' now
 import pygame
+import os
 
 # These variables are to be global
 current_room = rooms_id['lobby']
@@ -23,6 +24,7 @@ def game():
         gf.print_room(current_room)
         gf.print_inventory(player.inventory)
         gf.main()
+        os.system('cls')
         # don't take out
         break
 
