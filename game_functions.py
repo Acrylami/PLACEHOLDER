@@ -5,6 +5,7 @@ from player import *
 from items import items_id
 from main import current_dialogue, current_room    # global variables to update
 import string
+import pygame
 
 
 def print_room():
@@ -113,6 +114,9 @@ def exe_take(item_id):
     current room items"""
     global current_room
     global inventory
+    background_music = pygame.mixer.Sound("8bit.ogg")
+    pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
+    
 
     try:
         item_in_room = items_id[item_id]
@@ -124,11 +128,13 @@ def exe_take(item_id):
                 print('You cannot take this')
 
             for item in item_lst:
-                print(item)
                 if item == item_in_room:
+                    background_music.set_volume(0)
+                    pickup_sound.set_volume(0.5)
+                    pickup_sound.play()
+                    background_music.set_volume(0.5)
                     inventory.append(item)
                     current_room['items'].remove(item)
-                    print(current_room['items'])
 
     except KeyError:
         print('You cannot take this')
@@ -212,8 +218,6 @@ def print_menu():
     print("You can:")
     for values in current_room['items']:
         print("TAKE " + values.get('name'))
-    for values in inventory:
-        print("DROP " + values.get('name'))
 
 
 def main():
