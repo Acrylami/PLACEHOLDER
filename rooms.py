@@ -50,7 +50,7 @@ room_nursery = {
 room_bedroom = {
     'name': 'bedroom',
 
-    'description': '',
+    'description': 'You are in a victorian style bedroom',
 
     'items': [],
 
