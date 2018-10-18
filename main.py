@@ -11,7 +11,6 @@ current_dialogue = gc.opening_dialogue['description']
 # all game loops and events are tested and ran here
 # main game loop
 def game():
-
     while True:
         # this is just a test to see if this function can run
         gf.print_dialogue(current_dialogue)
