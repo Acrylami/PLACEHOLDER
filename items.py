@@ -42,3 +42,12 @@ item4 = {
     'description': 'placeholder2',
 
 }
+
+items_id = {
+    'note': item_note,
+    # a, b and c are placeholders
+    'a': item2,
+    'b': item3,
+    'c': item4,
+
+}
