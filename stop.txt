@@ -112,6 +112,7 @@ amazing
 American
 among
 amount
+an
 analysis
 analyst
 analyze
@@ -840,7 +841,6 @@ earnings
 earth
 ease
 easily
-east
 eastern
 easy
 eat
@@ -1763,7 +1763,6 @@ nonetheless
 nor
 normal
 normally
-north
 northern
 nose
 not
@@ -2485,7 +2484,6 @@ soul
 sound
 soup
 source
-south
 southern
 Soviet
 space
@@ -2913,7 +2911,6 @@ weight
 welcome
 welfare
 well
-west
 western
 wet
 what
