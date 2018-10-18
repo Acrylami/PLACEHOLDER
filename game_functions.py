@@ -1,8 +1,8 @@
 # all game functions will be placed in this file
 import rooms
 import game_content as gc    # game_content is referred as 'gc'
-import player
-import items
+from player import *
+from items import items_id
 from main import current_dialogue, current_room    # global variables to update
 import string
 
@@ -95,11 +95,14 @@ def normal_input(user_input):
     return filtered
 
 
-def exe_go(user_input_command):
+def exe_go(direction):
+    """when given the direction, this function will move the player to the
+    room in question, and the room which the player is currently in will be
+    the new current room"""
     global current_room
-    exit = is_exit_valid(current_room['exits'], user_input_command)
+    exit = is_exit_valid(current_room['exits'], direction)
     if exit:
-        current_room = move(current_room['exits'], user_input_command)
+        current_room = move(current_room['exits'], direction)
     else:
         print("You cannot go there.")
 
@@ -125,6 +128,7 @@ def exe_take(item_id):
                 if item == item_in_room:
                     inventory.append(item)
                     current_room['items'].remove(item)
+                    print(current_room['items'])
 
     except KeyError:
         print('You cannot take this')
@@ -208,7 +212,7 @@ def print_menu():
     print("You can:")
     for values in current_room['items']:
         print("TAKE " + values.get('name'))
-    for values in player.inventory:
+    for values in inventory:
         print("DROP " + values.get('name'))
 
 
