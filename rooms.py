@@ -32,7 +32,7 @@ room_bathroom = {
 
     'items': [],
 
-    'exits': {'west', 'lobby'},
+    'exits': {'west': 'lobby'},
 
 }
 
@@ -43,7 +43,7 @@ room_nursery = {
 
     'items': [],
 
-    'exits': {'east', 'landing floor', },
+    'exits': {'east': 'landing floor', },
 
 }
 
