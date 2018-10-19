@@ -23,7 +23,8 @@ def game():
     while True:
         # this is just a test to see if this function can run
         print(items.item_title['Title'])
-        print(gc.current_riddle)
+        if gc.current_riddle == items.item_title['Instructions']:
+            print(gc.current_riddle)
         gf.print_dialogue()
         gf.print_room()
         gf.print_inventory(player.inventory)
