@@ -5,9 +5,11 @@ import game_content as gc    # all dialogue are referred as 'gc' now
 import items
 import pygame
 import os
+import time
 
 
 # These variables are to be global
+last_output = ''
 current_room = rooms_id['lobby']
 pygame.mixer.init()
 current_dialogue = gc.opening_dialogue['description']
@@ -28,6 +30,7 @@ def game():
         gf.print_dialogue()
         gf.print_room()
         gf.print_inventory(player.inventory)
+        gf.print_menu()
         gf.main()
         os.system('cls')
 
