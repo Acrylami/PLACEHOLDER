@@ -100,13 +100,13 @@ item_matchsticks = {
 item_riddle_clock = {
     'name': 'clock',
 
-    'description': 'placeholder2',
+    'description': 'a clock lays broken on the floor',
 
 }
 item_mirror = {
     'name': 'mirror',
 
-    'description': 'placeholder2',
+    'description': 'a big old mirror',
 
 }
 
