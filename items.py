@@ -28,7 +28,7 @@ item_title = {
                          |____    _______    __  ____    ___|
                         /A\                                  A
                        ((o))                                  )
-                        '------------------------------------'""" 
+                        '------------------------------------'"""
 
 }
 
@@ -124,5 +124,6 @@ items_id = {
     'a': item2,
     'b': item3,
     'c': item4,
-
+    'matchsticks': item_matchsticks,
+    'candle': item_riddle_candle,
 }
