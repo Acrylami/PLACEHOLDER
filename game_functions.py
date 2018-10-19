@@ -253,6 +253,8 @@ def main():
     corrected for the exe commands to work correctly"""
     # display the menu to the player
     print_menu()
+    if gc.current_riddle != items.item_title['Instructions']:
+        print(gc.current_riddle)
 
     # take the user input
     user_input = input('>')
