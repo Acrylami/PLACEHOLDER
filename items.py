@@ -209,7 +209,7 @@ item_riddle_clock = {
 item_mirror = {
     'name': 'mirror',
 
-    'description': 'a big old mirror',
+    'description': 'a big old mirror hangs from the wall',
 
 }
 
