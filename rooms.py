@@ -17,7 +17,7 @@ room_lobby = {
 room_kitchen = {
     'name': 'kitchen',
 
-    'description': '',
+    'description': 'You are at the kitchen',
 
     'items': [],
 
