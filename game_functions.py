@@ -183,6 +183,16 @@ def riddle_2():
     x = input("Ends life, kills laughter.")
     if x == "darkness" or "dark":
         pass
+    
+def riddle_3():
+    print("This thing all things devours:")
+    print("Birds, beasts, trees, flowers;")
+    print("Gnaws iron, bites steel;")
+    print("Grinds hard stones to meal;")
+    print("Slays king, ruins town,")
+    x = input("And beats high mountain down.")
+    if x == "darkness" or "dark":
+        pass
 """    
 def take():
     #take key and display:
