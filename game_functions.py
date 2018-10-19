@@ -101,8 +101,11 @@ def exe_go(direction):
     room in question, and the room which the player is currently in will be
     the new current room"""
     global current_room
+    footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
     if exit:
+        footsteps.set_volume(0.8)
+        footsteps.play()
         current_room = move(current_room['exits'], direction)
     else:
         print("You cannot go there.")
@@ -137,8 +140,30 @@ def exe_take(item_id):
         print('You cannot take this')
 
 
-def exe_solve_riddle(user_input_command):
-    pass
+def exe_interact(user_input_command):
+    global inventory
+    global current_dialogue
+    pickup_note = pygame.mixer.Sound("note.ogg")
+    if items.item_matchsticks in inventory:
+        if user_input_command == items.item_riddle_candle['name']:
+            items.item_riddle_candle['on'] = True
+            if items.item_riddle_candle['on']:
+                inventory.append(items.item_key_1)
+                print(items.item_riddle_candle['description_2'])
+                current_dialogue = gc.key1_dialogue['description']
+            else:
+                inventory.append(items.item_key_1)
+                print(items.item_riddle_candle['description_2'])
+                current_dialogue = gc.key1_dialogue['description']
+    else:
+        print("You dont have anything to light the candle with.")
+    if items.item_note1 in inventory:
+        if user_input_command == items.item_note1['name']:
+            gc.current_riddle = items.item_note1['riddle_1']
+            pickup_note.play()
+
+        
+    
 
 
 def exe_command(user_input_lst):
@@ -159,9 +184,9 @@ def exe_command(user_input_lst):
         else:
             print('Take which item?')
 
-    elif user_input_lst[0] == 'solve':
+    elif user_input_lst[0] == 'interact':
         if len(user_input_lst) > 1:
-            exe_solve_riddle(user_input_lst[1])
+            exe_interact(user_input_lst[1])
         else:
             print('Your answer to your the riddle?')
 
@@ -172,34 +197,6 @@ def exe_command(user_input_lst):
 def riddle_1():
     x = input("I'm tall when I'm young and I'm short when I'm old. What am I?")
     if x == "candle" or "a candle":
-        pass
-    
-def riddle_2():
-    print("It cannot be seen, cannot be felt,")
-    print("Cannot be heard, cannot be smelt.")
-    print("It lies behind stars and under hills,")
-    print("And empty holes it fills.")
-    print("It comes first and follows after,")
-    x = input("Ends life, kills laughter.")
-    if x == "darkness" or "dark":
-        pass
-    
-def riddle_3():
-    print("This thing all things devours:")
-    print("Birds, beasts, trees, flowers;")
-    print("Gnaws iron, bites steel;")
-    print("Grinds hard stones to meal;")
-    print("Slays king, ruins town,")
-    x = input("And beats high mountain down.")
-    if x == "time":
-        pass
-
-def riddle_4():
-    print("This item can be used")
-    print("To see what is right there")
-    print("An evil queen used hers")
-    x = input("To find out who’s most fair.")
-    if x == "mirror" or "a mirror":
         pass
 """    
 def take():
@@ -248,8 +245,6 @@ def print_menu():
     print('\nYou can: ')
     for direction, exit in current_room['exits'].items():
         print('GO ' + direction + ' to ' + exit)
-
-
 
 
 def main():
