@@ -173,6 +173,16 @@ def riddle_1():
     x = input("I'm tall when I'm young and I'm short when I'm old. What am I?")
     if x == "candle" or "a candle":
         pass
+    
+def riddle_2():
+    print("It cannot be seen, cannot be felt,")
+    print("Cannot be heard, cannot be smelt.")
+    print("It lies behind stars and under hills,")
+    print("And empty holes it fills.")
+    print("It comes first and follows after,")
+    x = input("Ends life, kills laughter.")
+    if x == "darkness" or "dark":
+        pass
 """    
 def take():
     #take key and display:
