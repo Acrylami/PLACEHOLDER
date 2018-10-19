@@ -113,28 +113,68 @@ item_note1 = {
 item_key_1 = {
     'name': 'key for main door',
 
-    'description': 'This is is 1 of 4 keys that will unlock the main door',
+    'description':      """
+                        .oso:                              
+                        :m- `yo                             
+                     .yyhm` -hs`:`                          
+                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+                     .syhm` -hs.:                :hdMMNhs   
+                        :m- `ho                  /MdmMyMh   
+                         .oso:                   -o::o`o+   
+                                
+                                 YOU GOT 1 KEY
+""",
 
 }
 
 item_key_2 = {
     'name': 'key for main door',
 
-    'description': 'This is is 1 of 4 keys that will unlock the main door',
+    'description': """
+                        .oso:                              
+                        :m- `yo                             
+                     .yyhm` -hs`:`                          
+                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+                     .syhm` -hs.:                :hdMMNhs   
+                        :m- `ho                  /MdmMyMh   
+                         .oso:                   -o::o`o+   
+                                
+                                 YOU GOT 1 KEY
+""",
 
 }
 
 item_key_3 = {
     'name': 'key for main door',
 
-    'description': 'This is is 1 of 4 keys that will unlock the main door',
+    'description': """
+                        .oso:                              
+                        :m- `yo                             
+                     .yyhm` -hs`:`                          
+                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+                     .syhm` -hs.:                :hdMMNhs   
+                        :m- `ho                  /MdmMyMh   
+                         .oso:                   -o::o`o+   
+                                
+                                 YOU GOT 1 KEY
+""",
 
 }
 
 item_key_4 = {
     'name': 'key for main door',
 
-    'description': 'This is is 1 of 4 keys that will unlock the main door',
+    'description': """
+                        .oso:                              
+                        :m- `yo                             
+                     .yyhm` -hs`:`                          
+                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+                     .syhm` -hs.:                :hdMMNhs   
+                        :m- `ho                  /MdmMyMh   
+                         .oso:                   -o::o`o+   
+                                
+                                 YOU GOT 1 KEY
+""",
 
 }
 
