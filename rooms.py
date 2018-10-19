@@ -10,14 +10,14 @@ room_lobby = {
 
     'items': [items.item_note1],
 
-    'exits': {'west': 'kitchen', 'east': 'bathroom', },
+    'exits': {'west': 'kitchen', 'east': 'bathroom', 'north': 'stairs'},
 
 }
 
 room_kitchen = {
     'name': 'kitchen',
 
-    'description': 'You are at the kitchen',
+    'description': '',
 
     'items': [],
 
@@ -50,9 +50,11 @@ room_nursery = {
 room_bedroom = {
     'name': 'bedroom',
 
-    'description': 'You are in a victorian style bedroom',
+    'description': '',
 
-    'items': [],
+    'items': [items.item_riddle_candle,
+              items.item_matchsticks,
+              ],
 
     'exits': {'west': 'landing floor', },
 
