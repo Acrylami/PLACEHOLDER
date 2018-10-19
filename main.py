@@ -22,12 +22,14 @@ def game():
     background_music.play(-1)
     while True:
         # this is just a test to see if this function can run
-        print(items.item_title['Title'] + "\n " + items.item_title['Instructions'])
+        print(items.item_title['Title'])
+        print(gc.current_riddle)
         gf.print_dialogue()
         gf.print_room()
         gf.print_inventory(player.inventory)
         gf.main()
         os.system('cls')
+
         # don't take out
 
 
