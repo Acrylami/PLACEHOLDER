@@ -97,8 +97,8 @@ item_matchsticks = {
 
 }
 
-item2 = {
-    'name': 'placeholder1.5',
+item_riddle_clock = {
+    'name': 'clock',
 
     'description': 'placeholder2',
 
