@@ -114,7 +114,6 @@ def exe_take(item_id):
     current room items"""
     global current_room
     global inventory
-    background_music = pygame.mixer.Sound("8bit.ogg")
     pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
     
 
@@ -129,10 +128,8 @@ def exe_take(item_id):
 
             for item in item_lst:
                 if item == item_in_room:
-                    background_music.set_volume(0)
-                    pickup_sound.set_volume(0.5)
+                    pickup_sound.set_volume(0.3)
                     pickup_sound.play()
-                    background_music.set_volume(0.5)
                     inventory.append(item)
                     current_room['items'].remove(item)
 
