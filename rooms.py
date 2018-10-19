@@ -8,7 +8,7 @@ room_lobby = {
 
     'description': 'the main landing of the house',
 
-    'items': [items.item_note],
+    'items': [items.item_note1],
 
     'exits': {'west': 'kitchen', 'east': 'bathroom', },
 
