@@ -191,7 +191,15 @@ def riddle_3():
     print("Grinds hard stones to meal;")
     print("Slays king, ruins town,")
     x = input("And beats high mountain down.")
-    if x == "darkness" or "dark":
+    if x == "time":
+        pass
+
+def riddle_4():
+    print("This item can be used")
+    print("To see what is right there")
+    print("An evil queen used hers")
+    x = input("To find out who’s most fair.")
+    if x == "mirror" or "a mirror":
         pass
 """    
 def take():
