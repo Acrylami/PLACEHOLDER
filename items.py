@@ -1,7 +1,4 @@
-item_note = {
-    'id': 'note',
-
-    'name': 'note',
+item_title = {
 
     'Title' :
      """
@@ -10,7 +7,30 @@ item_note = {
                      |       _/   ||    __)    |    |   
                      |    |   \   ||     \     |    |   
                      |____|_  /___|\___  /     |____| TM
-                            \/         \/  ADVENTURE GAME""",          
+                            \/         \/  ADVENTURE GAME""",
+
+    'Instructions' : 
+    """
+                    ____________________________________
+                   |                                    |
+                   |            INSTRUCTIONS            |
+                   |                                    |
+                   |   TYPE "go" TO NAVIGATE THROUGH    |
+                   |               ROOMS                |
+                   |                                    |
+                   |   TYPE "take" TO PICK UP AN ITEM   |
+                   |                                    |
+                   | IN ORDER TO SOLVE THE RIDDLES YOU  |
+                   | NEED TO "interact" WITH THE OBJECT |
+                   |____________________________________|"""                                  
+                   
+
+}
+
+item_note1= {
+    'id': 'note',
+
+    'name': 'note',        
 
     'riddle_1': 'placeholder_riddle_1',
 
@@ -44,7 +64,7 @@ item4 = {
 }
 
 items_id = {
-    'note': item_note,
+    'note': item_note1,
     # a, b and c are placeholders
     'a': item2,
     'b': item3,
