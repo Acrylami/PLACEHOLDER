@@ -1,12 +1,17 @@
 # all game functions will be placed in this file
 import rooms
-import game_content as gc    # game_content is referred as 'gc'
+import game_content as gc  # game_content is referred as 'gc'
 from player import *
 from items import items_id
-from main import current_dialogue, current_room    # global variables to update
+from main import current_dialogue, current_room  # global variables to update
 import string
 import pygame
 
+
+def print_last_output():
+    global last_output
+    if len(last_output) > 1:
+        print(last_output)
 
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
@@ -80,7 +85,7 @@ def refine_words(text):
         skip = skip.split('\n')
         words_wanted = []
         for item in text:
-            if not(item in skip):
+            if not (item in skip):
                 words_wanted.append(item)
         return words_wanted
 
@@ -101,6 +106,7 @@ def exe_go(direction):
     room in question, and the room which the player is currently in will be
     the new current room"""
     global current_room
+    global last_output
     footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
     if exit:
@@ -108,7 +114,7 @@ def exe_go(direction):
         footsteps.play()
         current_room = move(current_room['exits'], direction)
     else:
-        print("You cannot go there.")
+        last_output = "You cannot go there."
 
 
 def exe_take(item_id):
@@ -118,7 +124,6 @@ def exe_take(item_id):
     global current_room
     global inventory
     pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
-    
 
     try:
         item_in_room = items_id[item_id]
@@ -162,9 +167,6 @@ def exe_interact(user_input_command):
             gc.current_riddle = items.item_note1['riddle_1']
             pickup_note.play()
 
-        
-    
-
 
 def exe_command(user_input_lst):
     """function will check the first item, in which it will then either call
@@ -198,7 +200,42 @@ def riddle_1():
     x = input("I'm tall when I'm young and I'm short when I'm old. What am I?")
     if x == "candle" or "a candle":
         pass
-    
+
+
+"""    
+def take():
+    #take key and display:
+
+    print("")
+    print("                      :sdmNNNds/`                                                                           ")
+    print("                    -dMNho//oyNMm/                                                                          ")
+    print("                   -NMd-      .yMM/                                                                         ")
+    print("                   oMM:        `MMh                                                                         ")
+    print("             `:oyhhmMMs        :MMy                                                                         ")
+    print("           `omMNdhhmMMm:    .-sNMd--`.oo:                                                                   ")
+    print("           oMMh-   `:+.`sdyomMMMNdNMdmMMMoooooooooooo++++++oooooooooooooooooooooooooooooooooooooooo+-oso.   ")
+    print("           dMM-        /MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMh   ")
+    print("           +MMh-`  `:+.`sdyomMMMNdNMdmMMMooooooooooooooooooooosssssssssssssssssssssssssdMMMMMMmyssys/yhs-   ")
+    print("            +mMNdhhmMMm:    .-sNMd--`.oo:                                         yyyyydMMMMMMmyyyyy`       ")
+    print("             `:oyyymMMo        /MMs                                              `dNMMMMMMMMMMMMMMNd`       ")
+    print("                   sMM:        `MMh                                               /dMMMMMMMMMMMMMMd+`       ")
+    print("                   -NMd-      .hMM/                                              `MMMMNyyMMMMyyNMMMM.       ")
+    print("                    -dMNho//ohNMm/                                               `MMMMm  NMMM  dMMMM.       ")
+    print("                      :sdmNNNds/`                                                `mmmmh  dmmm  ymmmm`       ")
+    print("")
+    print("    ")
+    print("   ")
+    print("   ")
+    print("                                                       ")                                        
+    print("                                                        ")                                       
+    print("        `:`   :`  -/+/-   --    :`      `://:`   .://-  .//////.     `:.      `:   :` :////`--   --  s.   ")  
+    print("         od` sy .do-.-sd` sy    N:    `yy:..:/  yh-..+m-`.-yh..`    +om+      /m -h+  mo--- -m: :m.  N-    ") 
+    print("          +dsy  sh     m/ sy    N:    +d  .--- :N`    sh   sy         d+      /Nsy`   my++:  .m+m.   N-   ")  
+    print("           sd   sh     N/ sy    N:    +m  .-od :N`    yy   sy         d+      /m:d/   m+``    -M-    m.    ") 
+    print("           oh   .ds:-/hs  -m+-:sh      sh+::yd  sh/-:sh`   sy       -:ds:`    /m `sh. ms:::`  .M`   `o.     ")
+    print("           `.     .::-`     -::`         -::.    `-:-`     ..       -----`    `.   .. .----`   -     :`   ")  
+
+"""
 
 
 def print_menu():
@@ -212,16 +249,16 @@ def print_menu():
     for direction, exit in current_room['exits'].items():
         print('GO ' + direction + ' to ' + exit)
 
+    if gc.current_riddle != items.item_title['Instructions']:
+        print(gc.current_riddle)
+
 
 def main():
     """Function will display the options the user has, it will then read
     their input and go on to to the parser where their input will be
     corrected for the exe commands to work correctly"""
     # display the menu to the player
-    print_menu()
-    if gc.current_riddle != items.item_title['Instructions']:
-        print(gc.current_riddle)
-
+    global last_output
     # take the user input
     user_input = input('>')
 
@@ -229,3 +266,8 @@ def main():
     normal_user_input = normal_input(user_input)
 
     exe_command(normal_user_input)
+    if len(last_output) > 1:
+        print(last_output)
+        last_output = ''
+        main()
+
