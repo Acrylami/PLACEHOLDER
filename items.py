@@ -37,13 +37,76 @@ item_note1 = {
 
     'name': 'note',
 
-    'riddle_1': 'placeholder_riddle_1',
+'riddle_1': """    .-.---------------------------------.-.
+                      ((o))                                   )
+                       \W/_______          _____         ____/
+                         |                                  |
+                         |               NOTE               |
+                         |                                  |
+                         |     I'm tall when I'm young and  |
+                         |      I'm short when I'm old.     |
+                         |             What am I?           |
+                         |                                  |
+                         |____    _______    __  ____    ___|
+                        /A\                                  A
+                       ((o))                                  )
+                        '------------------------------------                       
+    """,
 
-    'riddle_2': 'placeholder_riddle_2',
+    'riddle_2': """    .-.---------------------------------.-.
+                      ((o))                                   )
+                       \W/_______          _____         ____/
+                         |                                  |
+                         |               NOTE               |
+                         |                                  |
+                         |   It cannot be seen, cannot be 
+                           felt, Cannot be heard, cannot be |
+                         | smelt. It lies behind stars and  |
+                         |   under hills, And empty holes   |
+                         |   it fills. It comes first and   |
+                         |      follows after,Ends life,    |
+                         |           kills laughter.        |
+                         __    _______    __  ____    ___   |
+                        /A\                                  A
+                       ((o))                                  )
+                        '------------------------------------                       
+    """,
 
-    'riddle_3': 'placeholder_riddle_3',
+    'riddle_3': """    .-.---------------------------------.-.
+                      ((o))                                   )
+                       \W/_______          _____         ____/
+                         |                                  |
+                         |               NOTE               |
+                         |                                  |
+                         |   This thing all things devours: |
+                            Birds, beasts, trees, flowers;  |
+                         |      Gnaws iron, bites steel;    |
+                         |     Grinds hard stones to meal;  |
+                         |      Slays king, ruins town,     |
+                         |    And beats high mountain down. |
+                         |                                  |
+                         __    _______    __  ____    ___   |
+                        /A\                                  A
+                       ((o))                                  )
+                        '------------------------------------                       
+    """,
 
-    'riddle_4': 'placeholder_riddle_4',
+    'riddle_4':  """    .-.---------------------------------.-.
+                      ((o))                                   )
+                       \W/_______          _____         ____/
+                         |                                  |
+                         |               NOTE               |
+                         |                                  |
+                         |       This item can be used      |
+                              To see what is right there    |
+                         |      An evil queen used hers     |
+                         |    To find out who’s most fair.  |
+                         |                                  |
+                         __    _______    __  ____    ___   |
+                        /A\                                  A
+                       ((o))                                  )
+                        '------------------------------------                       
+    """,
 
 }
 
