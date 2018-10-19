@@ -103,7 +103,19 @@ item_riddle_clock = {
     'description': 'placeholder2',
 
 }
+item_mirror = {
+    'name': 'mirror',
 
+    'description': 'placeholder2',
+
+}
+
+item2 = {
+    'name': 'placeholder',
+
+    'description': 'placeholder2',
+
+}
 item3 = {
     'name': 'placeholder',
 
