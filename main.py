@@ -11,7 +11,7 @@ import os
 current_room = rooms_id['lobby']
 pygame.mixer.init()
 current_dialogue = gc.opening_dialogue['description']
-background_music = pygame.mixer.Sound("8bit.ogg")
+background_music = pygame.mixer.Sound("OST.ogg")
 
 
 # all game loops
@@ -19,10 +19,10 @@ background_music = pygame.mixer.Sound("8bit.ogg")
 # main game loop
 def game():
     background_music.set_volume(0.5)
-    background_music.play()
+    background_music.play(-1)
     while True:
         # this is just a test to see if this function can run
-        print(items.item_note['Title'])
+        print(items.item_title['Title'] + "\n " + items.item_title['Instructions'])
         gf.print_dialogue()
         gf.print_room()
         gf.print_inventory(player.inventory)
