@@ -222,12 +222,16 @@ def take():
 
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
-    print("You can:")
+    print("\nThere is in this room: ")
+
+    for values in current_room['items']:
+        print(values.get('name'))
+
+    print('\nYou can: ')
     for direction, exit in current_room['exits'].items():
         print('GO ' + direction + ' to ' + exit)
-    
-    for values in current_room['items']:
-        print("TAKE " + values.get('name'))
+
+
 
 
 def main():
