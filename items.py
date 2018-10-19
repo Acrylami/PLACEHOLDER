@@ -2,27 +2,33 @@ item_title = {
 
     'Title':
         """
-                       ____________________________________
-                       \______   \   \_   _____/\__    ___/
-                        |       _/   ||    __)    |    |   
-                        |    |   \   ||     \     |    |   
-                        |____|_  /___|\___  /     |____| TM
-                               \/         \/  ADVENTURE GAME""",
+                            ▄▄▄· ▄▄▄▄·  ▄· ▄▌.▄▄ · .▄▄ · 
+                           ▐█ ▀█ ▐█ ▀█▪▐█▪██▌▐█ ▀. ▐█ ▀. 
+                           ▄█▀▀█ ▐█▀▀█▄▐█▌▐█▪▄▀▀▀█▄▄▀▀▀█▄
+                           ▐█ ▪▐▌██▄▪▐█ ▐█▀·.▐█▄▪▐█▐█▄▪▐█
+                            ▀  ▀ ·▀▀▀▀   ▀ •  ▀▀▀▀  ▀▀▀▀ TM
+                                    ADVENTURE GAME""",
 
     'Instructions':
         """
-                        ____________________________________
-                       |                                    |
-                       |            INSTRUCTIONS            |
-                       |                                    |
-                       |   TYPE "go" TO NAVIGATE THROUGH    |
-                       |               ROOMS                |
-                       |                                    |
-                       |   TYPE "take" TO PICK UP AN ITEM   |
-                       |                                    |
-                       | IN ORDER TO SOLVE THE RIDDLES YOU  |
-                       | NEED TO "interact" WITH THE OBJECT |
-                       |____________________________________|""",
+                       .-.---------------------------------.-.
+                      ((o))         INSTRUCTIONS              )
+                       \U/_______          _____         ____/
+                         |                                  |
+                         |  TYPE "go" TO NAVIGATE THROUGH   |
+                         |              ROOMS               |
+                         |                                  |
+                         |  TYPE "take" TO PICK UP AN ITEM  |
+                         |                                  |
+                         |  IN ORDER TO SOLVE THE RIDDLES   |
+                         |   YOU NEED TO "interact" WITH    |
+                         |           THE OBJECT             |
+                         |                                  |
+                         |                                  |
+                         |____    _______    __  ____    ___|
+                        /A\                                  A
+                       ((o))                                  )
+                        '-'----------------------------------'""" 
 
 }
 
