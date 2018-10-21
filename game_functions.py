@@ -8,12 +8,6 @@ import string
 import os
 import pygame
 
-
-def print_last_output():
-    global last_output
-    if len(last_output) > 1:
-        print(last_output)
-
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
     global current_room
@@ -107,16 +101,14 @@ def exe_go(direction):
     room in question, and the room which the player is currently in will be
     the new current room"""
     global current_room
-    global last_output
     footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
     if exit:
         footsteps.set_volume(0.8)
         footsteps.play()
         current_room = move(current_room['exits'], direction)
-        os.system('cls')
     else:
-        last_output = "You cannot go there."
+        print("You cannot go there.")
 
 
 def exe_take(item_id):
@@ -125,7 +117,6 @@ def exe_take(item_id):
     current room items"""
     global current_room
     global inventory
-    global last_output
     pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
 
     try:
@@ -143,29 +134,33 @@ def exe_take(item_id):
                     pickup_sound.play()
                     inventory.append(item)
                     current_room['items'].remove(item)
-                    print(item['description'])
 
     except KeyError:
-        last_output = ('You cannot take this')
+        print('You cannot take this')
 
 
 def exe_interact(user_input_command):
     global inventory
     global current_dialogue
     pickup_note = pygame.mixer.Sound("note.ogg")
-    if items.item_matchsticks in inventory:
-        if user_input_command == items.item_riddle_candle['name']:
-            items.item_riddle_candle['on'] = True
-            if items.item_riddle_candle['on']:
-                inventory.append(items.item_key_1)
-            else:
-                inventory.append(items.item_key_1)
-    else:
-        print("You dont have anything to light the candle with.")
-    if items.item_note1 in inventory:
-        if user_input_command == items.item_note1['name']:
-            gc.current_riddle = items.item_note1['riddle_1']
-            pickup_note.play()
+    if user_input_command == "candle":
+        if items.item_matchsticks in inventory:
+            if user_input_command == items.item_riddle_candle['name']:
+                items.item_riddle_candle['on'] = True
+                if items.item_riddle_candle['on']:
+                    inventory.append(items.item_key_1)
+                else:
+                    inventory.append(items.item_key_1)
+        else:
+            print("You dont have anything to light the candle with.")
+
+    elif user_input_command == "note":
+        if items.item_note1 in inventory:
+            if user_input_command == items.item_note1['name']:
+                gc.current_riddle = items.item_note1['riddle_1']
+                pickup_note.play()
+        else:
+            print("You dont have a note")
 
 
 def exe_command(user_input_lst):
@@ -222,7 +217,6 @@ def main():
     their input and go on to to the parser where their input will be
     corrected for the exe commands to work correctly"""
     # display the menu to the player
-    global last_output
     # take the user input
     user_input = input('>')
 
@@ -230,8 +224,4 @@ def main():
     normal_user_input = normal_input(user_input)
 
     exe_command(normal_user_input)
-    if len(last_output) > 1:
-        print(last_output)
-        last_output = ''
-        main()
 
