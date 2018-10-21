@@ -10,7 +10,7 @@ room_lobby = {
 
     'items': [items.item_note1],
 
-    'exits': {'west': 'kitchen', 'east': 'bathroom', 'north': 'stairs'},
+    'exits': {'west': 'kitchen', 'east': 'bathroom', 'up': 'stairs'},
 
 }
 
@@ -68,7 +68,7 @@ room_stairs = {
 
     'items': [],
 
-    'exits': {'south': 'lobby', 'north': 'landing floor', },
+    'exits': {'down': 'lobby', 'up': 'landing floor', },
 
 }
 
@@ -79,7 +79,7 @@ room_landing_floor_1 = {
 
     'items': [],
 
-    'exits': {'west': 'nursery', 'east': 'bedroom', },
+    'exits': {'west': 'nursery', 'east': 'bedroom', 'down': 'stairs' },
 
 }
 
