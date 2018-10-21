@@ -5,8 +5,8 @@ from player import *
 from items import items_id
 from main import current_dialogue, current_room  # global variables to update
 import string
-import os
 import pygame
+
 
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
@@ -163,6 +163,17 @@ def exe_interact(user_input_command):
             print("You dont have a note")
 
 
+def exe_observe(user_input_command):
+    global inventory
+    global items
+
+    try:
+        if inventory:
+            item_to_observe = items_id[user_input_command]
+            print(item_to_observe['description'])
+    except KeyError:
+        print('You cannot observe this')
+
 def exe_command(user_input_lst):
     """function will check the first item, in which it will then either call
     go, take or solve riddle"""
@@ -186,9 +197,15 @@ def exe_command(user_input_lst):
             exe_interact(user_input_lst[1])
         else:
             print('Your answer to your the riddle?')
+    elif user_input_lst[0] == 'observe':
+        if len(user_input_lst) > 1:
+            exe_observe(user_input_lst[1])
+        else:
+            print('Interact with which item?')
 
     else:
         print('What are you doing?')
+
 
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
@@ -208,8 +225,6 @@ def print_menu():
     if items.item_key_1 in inventory:
         print("\n" + items.item_riddle_candle['description_2'])
         print(items.item_key_1['description'])
-    
-
 
 
 def main():
@@ -224,4 +239,3 @@ def main():
     normal_user_input = normal_input(user_input)
 
     exe_command(normal_user_input)
-
