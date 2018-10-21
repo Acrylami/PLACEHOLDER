@@ -103,12 +103,17 @@ def exe_go(direction):
     global current_room
     footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
-    if exit:
-        footsteps.set_volume(0.8)
-        footsteps.play()
-        current_room = move(current_room['exits'], direction)
+    #a = current_room['exits']
+    room_door = current_room['exits'][direction]
+    if rooms.rooms_id[room_door]['door']:
+        if exit:
+            footsteps.set_volume(0.8)
+            footsteps.play()
+            current_room = move(current_room['exits'], direction)
+        else:
+            print("You cannot go there.")
     else:
-        print("You cannot go there.")
+        print('The door is locked. You need a key')
 
 
 def exe_take(item_id):
