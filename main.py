@@ -9,7 +9,6 @@ import time
 
 
 # These variables are to be global
-last_output = ''
 current_room = rooms_id['lobby']
 pygame.mixer.init()
 current_dialogue = gc.opening_dialogue['description']
@@ -28,10 +27,11 @@ def game():
         if gc.current_riddle == items.item_title['Instructions']:
             print(gc.current_riddle)
         gf.print_dialogue()
-        gf.print_room()
         gf.print_inventory(player.inventory)
+        gf.print_room()
         gf.print_menu()
         gf.main()
+        input('PRESS ENTER TO CONTINUE')
         os.system('cls')
 
         # don't take out
