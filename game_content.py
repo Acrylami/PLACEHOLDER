@@ -17,7 +17,8 @@ How did you get here? You must escape.""",
 key1_dialogue = {
     "description":
 
-    """You have obtained ONE of the FOUR keys to unlock the main door.
-                You now have access to the NURSERY."""
+    """
+    You have obtained ONE of the FOUR keys to unlock the main door.
+    You now have access to the NURSERY."""
 }
 
