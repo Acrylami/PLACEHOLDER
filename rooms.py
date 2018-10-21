@@ -23,6 +23,8 @@ room_kitchen = {
 
     'exits': {'east': 'lobby', },
 
+    'door': False,
+
 }
 
 room_bathroom = {
