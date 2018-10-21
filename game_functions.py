@@ -5,6 +5,7 @@ from player import *
 from items import items_id
 from main import current_dialogue, current_room  # global variables to update
 import string
+import os
 import pygame
 
 
@@ -113,6 +114,7 @@ def exe_go(direction):
         footsteps.set_volume(0.8)
         footsteps.play()
         current_room = move(current_room['exits'], direction)
+        os.system('cls')
     else:
         last_output = "You cannot go there."
 
@@ -123,6 +125,7 @@ def exe_take(item_id):
     current room items"""
     global current_room
     global inventory
+    global last_output
     pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
 
     try:
@@ -140,9 +143,10 @@ def exe_take(item_id):
                     pickup_sound.play()
                     inventory.append(item)
                     current_room['items'].remove(item)
+                    print(item['description'])
 
     except KeyError:
-        print('You cannot take this')
+        last_output = ('You cannot take this')
 
 
 def exe_interact(user_input_command):
@@ -154,12 +158,8 @@ def exe_interact(user_input_command):
             items.item_riddle_candle['on'] = True
             if items.item_riddle_candle['on']:
                 inventory.append(items.item_key_1)
-                print(items.item_riddle_candle['description_2'])
-                current_dialogue = gc.key1_dialogue['description']
             else:
                 inventory.append(items.item_key_1)
-                print(items.item_riddle_candle['description_2'])
-                current_dialogue = gc.key1_dialogue['description']
     else:
         print("You dont have anything to light the candle with.")
     if items.item_note1 in inventory:
@@ -195,51 +195,9 @@ def exe_command(user_input_lst):
     else:
         print('What are you doing?')
 
-
-def riddle_1():
-    x = input("I'm tall when I'm young and I'm short when I'm old. What am I?")
-    if x == "candle" or "a candle":
-        pass
-
-
-"""    
-def take():
-    #take key and display:
-
-    print("")
-    print("                      :sdmNNNds/`                                                                           ")
-    print("                    -dMNho//oyNMm/                                                                          ")
-    print("                   -NMd-      .yMM/                                                                         ")
-    print("                   oMM:        `MMh                                                                         ")
-    print("             `:oyhhmMMs        :MMy                                                                         ")
-    print("           `omMNdhhmMMm:    .-sNMd--`.oo:                                                                   ")
-    print("           oMMh-   `:+.`sdyomMMMNdNMdmMMMoooooooooooo++++++oooooooooooooooooooooooooooooooooooooooo+-oso.   ")
-    print("           dMM-        /MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMh   ")
-    print("           +MMh-`  `:+.`sdyomMMMNdNMdmMMMooooooooooooooooooooosssssssssssssssssssssssssdMMMMMMmyssys/yhs-   ")
-    print("            +mMNdhhmMMm:    .-sNMd--`.oo:                                         yyyyydMMMMMMmyyyyy`       ")
-    print("             `:oyyymMMo        /MMs                                              `dNMMMMMMMMMMMMMMNd`       ")
-    print("                   sMM:        `MMh                                               /dMMMMMMMMMMMMMMd+`       ")
-    print("                   -NMd-      .hMM/                                              `MMMMNyyMMMMyyNMMMM.       ")
-    print("                    -dMNho//ohNMm/                                               `MMMMm  NMMM  dMMMM.       ")
-    print("                      :sdmNNNds/`                                                `mmmmh  dmmm  ymmmm`       ")
-    print("")
-    print("    ")
-    print("   ")
-    print("   ")
-    print("                                                       ")                                        
-    print("                                                        ")                                       
-    print("        `:`   :`  -/+/-   --    :`      `://:`   .://-  .//////.     `:.      `:   :` :////`--   --  s.   ")  
-    print("         od` sy .do-.-sd` sy    N:    `yy:..:/  yh-..+m-`.-yh..`    +om+      /m -h+  mo--- -m: :m.  N-    ") 
-    print("          +dsy  sh     m/ sy    N:    +d  .--- :N`    sh   sy         d+      /Nsy`   my++:  .m+m.   N-   ")  
-    print("           sd   sh     N/ sy    N:    +m  .-od :N`    yy   sy         d+      /m:d/   m+``    -M-    m.    ") 
-    print("           oh   .ds:-/hs  -m+-:sh      sh+::yd  sh/-:sh`   sy       -:ds:`    /m `sh. ms:::`  .M`   `o.     ")
-    print("           `.     .::-`     -::`         -::.    `-:-`     ..       -----`    `.   .. .----`   -     :`   ")  
-
-"""
-
-
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
+
     print("\nThere is in this room: ")
 
     for values in current_room['items']:
@@ -251,6 +209,12 @@ def print_menu():
 
     if gc.current_riddle != items.item_title['Instructions']:
         print(gc.current_riddle)
+
+    if items.item_key_1 in inventory:
+        print("\n" + items.item_riddle_candle['description_2'])
+        print(items.item_key_1['description'])
+    
+
 
 
 def main():
