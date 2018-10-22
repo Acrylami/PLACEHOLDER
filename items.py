@@ -128,7 +128,6 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
-
 You have obtained ONE of the FOUR keys to unlock the main door.
            You now have access to the NURSERY.
 """,
@@ -146,7 +145,6 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
-
 You have obtained TWO of the FOUR keys to unlock the main door.
            You now have access to the BATHROOM.
 """,
@@ -164,7 +162,6 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
-
 You have obtained THREE of the FOUR keys to unlock the main door.
            You now have access to the KITCHEN.
 """,
@@ -182,7 +179,6 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
-
 You have obtained FOUR of the FOUR keys to unlock the main door.
            You now have access to the MAIN DOOR.
 """,
@@ -265,8 +261,8 @@ item_pendulum = {
     'name': 'pendulum',
 
     'description':
-"""A pendulum is lying on floor, it seems it was a part of something...
-"""
+        """A pendulum is lying on floor, it seems it was a part of something...
+        """
 }
 
 item_mirror = {
@@ -276,12 +272,6 @@ item_mirror = {
 
 }
 
-item_mirror = {
-    'name': 'mirror',
-
-    'description': 'a big old mirror hangs from the wall',
-
-}
 
 item_bath = {
     'name': 'bath tub',
@@ -310,10 +300,10 @@ item_paper = {
 
     'name': 'paper',
 
-    'description':  """
-    
-                                                                                             
-                                                                                         
+    'description': """
+
+
+
           *      ,/,                         ((.           .                             
           (.    .@@&.     /,                &@@*         %@@@#.     %/        .*.        
           **     *@%.    &@@@@@@(.         #@@@#         &@@@@%    (@@/      /@@@@@@%/   
@@ -328,13 +318,13 @@ item_paper = {
           #&       /.     *.         #.         *@@/    */                     *         
          ,&,       /.        ...    /.          ,&@@/   /.                        ..     
                    ,                              %&,   /                                
-                                                                                       
-    
-    
+
+
+
     """,
 
     'description_2': """
-    
+
                                     ,                                                                    
                                         #%,          %@&                        .&@%      %          
                    ,%@.        @@     (@@@@&         (@@#               ,%@.    ,@@@     ,%          
@@ -351,48 +341,63 @@ item_paper = {
                 .,.                        /*   %@@&.          */    .,.        ,(       *@,         
                                             (   #@&             .                /                   
 
-                
 """,
 
 }
 
 item_light_switch = {
+    'name': 'switch',
+
     'switch': True,
 
-    'description': 'A simple light switch which can turn th lights on and off'
+    'description': 'A simple light switch which can turn the lights on and '
+                   'off',
+
+    'description_2':
+"""After turning the light off, the stars on the wallpaper illuminate. On
+one side of the room, there seems to be a large cluster of stars grouped
+together. You go towards it...
+""",
 }
 
 item_button = {
+    'name': 'button',
+
     'on': False,
 
-    'description':
-"""You've pressed the button, a secert compartment is revealed
+    'description': 'A glowing button',
+
+    'description_2':
+"""You've pressed the button, a brightly lit compartment is opened in the side
+of the room. You walk towards the compartment to find a key burrowed within
+it.
 """
 }
 
 item_building_block = {
     'name': 'block',
-    
+
     'description': 'there is a building block',
 
 }
-
 
 items_id = {
     'note': item_note1,
     # a, b and c are placeholders
     'matchsticks': item_matchsticks,
     'candle': item_riddle_candle,
-    'light switch': item_light_switch,
+    'switch': item_light_switch,
     'button': item_button,
     'mirror': item_mirror,
     'clock': item_riddle_clock,
     'pendulum': item_pendulum,
     'bath': item_bath,
-    'sink':item_sink,
-    'toilet':item_toilet,
-    'cabinet':item_cabinet,
-    'photo':item_photo_frame,
-    'paper':item_paper,
-    'block':item_building_block,
+    'sink': item_sink,
+    'toilet': item_toilet,
+    'cabinet': item_cabinet,
+    'photo': item_photo_frame,
+    'paper': item_paper,
+    'block': item_building_block,
+
+
 }
