@@ -234,6 +234,14 @@ item_button = {
 """
 }
 
+item_pendulum = {
+    'name': 'pendulum',
+
+    'description':
+"""A pendulum is lying on floor, it seems it was a part of something...
+"""
+}
+
 
 items_id = {
     'note': item_note1,
@@ -243,4 +251,6 @@ items_id = {
     'light switch': item_light_switch,
     'button': item_button,
     'mirror': item_mirror,
+    'pendulum': item_pendulum,
+    
 }
