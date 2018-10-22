@@ -101,25 +101,29 @@ def exe_go(direction):
     room in question, and the room which the player is currently in will be
     the new current room"""
     global current_room
+    global key_counter
     footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
-    room_door = current_room['exits'][direction]
     try:
-        if rooms.rooms_id[room_door]['door']:
-            if exit:
-                footsteps.set_volume(0.8)
-                footsteps.play()
-                current_room = move(current_room['exits'], direction)
+        room_door = current_room['exits'][direction]
+        if current_room['exits'][direction] != 'main door':
+            if rooms.rooms_id[room_door]['door']:
+                if exit:
+                    footsteps.set_volume(0.8)
+                    footsteps.play()
+                    current_room = move(current_room['exits'], direction)
+                else:
+                    print("You cannot go there.")
             else:
-                print("You cannot go there.")
+                print('The door is locked. You need a key')
         else:
-                print("""This large embroidered door appears to be locked with 
-                  chains and a padlock with 4 keyholes. The lock seems 
-                  very sturdy and robust, it doesn'\t seem I can break this 
-                  open. The only way to open this lock is to find 4 keys...
-                  """)
+            print("""
+This large embroidered door appears to be locked with 
+chains and a padlock with 4 keyholes. The lock seems 
+very sturdy and robust, it doesn't seem I can break this 
+open. The only way to open this lock is to find 4 keys...\n""")
     except KeyError:
-        pass
+        print('You cannot go there')
 
 
 def exe_take(item_id):
@@ -164,10 +168,11 @@ def exe_interact(user_input_command):
                 items.item_riddle_candle['on'] = True
                 if items.item_riddle_candle['on']:
                     inventory.append(items.item_key_1)
+                    rooms.room_nursery['door'] = True
                 else:
                     inventory.append(items.item_key_1)
         else:
-            print("You don'\t have anything to light the candle with.")
+            print("You don't have anything to light the candle with.")
 
     elif user_input_command == "note":
         if items.item_note1 in inventory:
@@ -175,7 +180,7 @@ def exe_interact(user_input_command):
                 gc.current_riddle = items.item_note1['riddle_1']
                 pickup_note.play()
         else:
-            print("You don'\t have a note")
+            print("You don't have a note")
 
 
 def exe_observe(user_input_command):
@@ -227,6 +232,10 @@ def exe_command(user_input_lst):
 
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
+    global has_printed_1
+    global has_printed_2
+    global has_printed_3
+    global has_printed_4
 
     print("\nThere is in this room: ")
 
@@ -240,9 +249,10 @@ def print_menu():
     if gc.current_riddle != items.item_title['Instructions']:
         print(gc.current_riddle)
 
-    if items.item_key_1 in inventory:
+    if (items.item_key_1 in inventory) and not (has_printed_1):
         print("\n" + items.item_riddle_candle['description_2'])
         print(items.item_key_1['description'])
+        has_printed_1 = True
 
 
 def main():
