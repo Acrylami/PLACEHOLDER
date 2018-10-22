@@ -11,7 +11,7 @@ import time
 # These variables are to be global
 current_room = rooms_id['lobby']
 pygame.mixer.init()
-current_dialogue = gc.opening_dialogue['description']
+current_dialogue = gc.filler_dialogue['description']
 background_music = pygame.mixer.Sound("OST.ogg")
 
 
@@ -19,14 +19,15 @@ background_music = pygame.mixer.Sound("OST.ogg")
 # and events are tested and ran here
 # main game loop
 def game():
-
+    os.system('cls')
     print(items.item_title['Title'])
-    input("""\n\t\t\t\t\t\t\t\t  PRESS ENTER TO CONTINUE""")
+    s = "PRESS ENTER TO CONTINUE"
+    input(s.center(44))
     os.system('cls')
     print(gc.opening_dialogue['description'])
-    input('\n\t\t\t\t\t\t\t\t  PRESS ENTER TO CONTINUE')
+    input(s.center(70))
     os.system('cls')
-    print("\n\t\t\t\t\t\tYou have a note in your pocket, "
+    print("\n\n\n\n\n\n\n\n\n\nYou have a note in your pocket, "
           "TYPE 'interact note' to see your first riddle.")
     gf.main()
     os.system('cls')
@@ -36,8 +37,6 @@ def game():
     while True:
         # this is just a test to see if this function can run
         print(items.item_title['Title'])
-        if gc.current_riddle == items.item_title['Instructions']:
-            print(gc.current_riddle)
         gf.print_dialogue()
         gf.print_inventory(player.inventory)
         gf.print_room()
