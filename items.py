@@ -38,7 +38,7 @@ item_note1 = {
 
     'name': 'note',
 
-    'description' : 'A note with riddles on it',
+    'description': 'A note with riddles on it',
 
     'riddle_1': """        
                        .-.---------------------------------.-.
@@ -97,7 +97,7 @@ item_note1 = {
                         '------------------------------------                       
     """,
 
-    'riddle_4':  """    
+    'riddle_4': """    
                        .-.---------------------------------.-.
                       ((o))                                   )
                        \W/_______          _____         ____/
@@ -120,7 +120,7 @@ item_note1 = {
 item_key_1 = {
     'name': 'key for main door',
 
-    'description':      """
+    'description': """
                         .oso:                              
                         :m- `yo                             
                      .yyhm` -hs`:`                          
@@ -128,7 +128,7 @@ item_key_1 = {
                      .syhm` -hs.:                :hdMMNhs   
                         :m- `ho                  /MdmMyMh   
                          .oso:                   -o::o`o+   
-                                
+
           You have obtained ONE of the FOUR keys to unlock the main door.
                         You now have access to the NURSERY.
 """,
@@ -146,7 +146,7 @@ item_key_2 = {
                      .syhm` -hs.:                :hdMMNhs   
                         :m- `ho                  /MdmMyMh   
                          .oso:                   -o::o`o+   
-                                
+
                                  YOU GOT 1 KEY
 """,
 
@@ -163,7 +163,7 @@ item_key_3 = {
                      .syhm` -hs.:                :hdMMNhs   
                         :m- `ho                  /MdmMyMh   
                          .oso:                   -o::o`o+   
-                                
+
                                  YOU GOT 1 KEY
 """,
 
@@ -180,12 +180,11 @@ item_key_4 = {
                      .syhm` -hs.:                :hdMMNhs   
                         :m- `ho                  /MdmMyMh   
                          .oso:                   -o::o`o+   
-                                
+
                                  YOU GOT 1 KEY
 """,
 
 }
-
 
 item_riddle_candle = {
     'name': 'candle',
@@ -221,32 +220,26 @@ item_mirror = {
 
 }
 
-item2 = {
-    'name': 'placeholder',
+item_light_switch = {
+    'switch': True,
 
-    'description': 'placeholder2',
-
-}
-item3 = {
-    'name': 'placeholder',
-
-    'description': 'placeholder2',
-
+    'description': 'A simple light switch which can turn th lights on and off'
 }
 
-item4 = {
-    'name': 'placeholder',
+item_button = {
+    'on': False,
 
-    'description': 'placeholder2',
-
+    'description':
+"""You've pressed the button, a secert compartment is revealed
+"""
 }
+
 
 items_id = {
     'note': item_note1,
     # a, b and c are placeholders
-    'a': item2,
-    'b': item3,
-    'c': item4,
     'matchsticks': item_matchsticks,
     'candle': item_riddle_candle,
+    'light switch': item_light_switch,
+    'button': item_button,
 }
