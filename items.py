@@ -242,4 +242,5 @@ items_id = {
     'candle': item_riddle_candle,
     'light switch': item_light_switch,
     'button': item_button,
+    'mirror': item_mirror,
 }
