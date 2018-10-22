@@ -6,6 +6,8 @@ from items import items_id
 from main import current_dialogue, current_room  # global variables to update
 import string
 import pygame
+import time
+import items
 
 
 def print_room():
@@ -166,7 +168,10 @@ def exe_interact(user_input_command):
     this will only work for the items that we have coded in here"""
     global inventory
     global current_dialogue
+    global has_printed_1
     pickup_note = pygame.mixer.Sound("note.ogg")
+    matchstick_sound = pygame.mixer.Sound("matchstick.ogg")
+    got_key = pygame.mixer.Sound("got_key.ogg")
     if user_input_command == "candle":
         if items.item_matchsticks in inventory:
             if user_input_command == items.item_riddle_candle['name']:
@@ -174,8 +179,16 @@ def exe_interact(user_input_command):
                 if items.item_riddle_candle['on']:
                     inventory.append(items.item_key_1)
                     rooms.room_nursery['door'] = True
+                    matchstick_sound.set_volume(1)
+                    matchstick_sound.play()
+                    time.sleep(5)
+                    got_key.set_volume(0.8)
+                    got_key.play()
                 else:
                     inventory.append(items.item_key_1)
+                    rooms.room_nursery['door'] = True
+                    matchstick_sound.set_volume(1)
+                    matchstick_sound.play()
         else:
             print("You don't have anything to light the candle with.")
 
@@ -186,18 +199,26 @@ def exe_interact(user_input_command):
                 pickup_note.play()
         else:
             print("You don't have a note")
+            
+    
+    elif user_input_command == 'clock':
+        if items.item_pendulum in inventory:
+            if user_input_command == items.item_riddle_clock['name']:
+                inventory.append(items.item_key_4)
+                got_key.play()
+                rooms.room_main_door['door'] = True
+        else:
+            print("This clock is missing something...")
 
-    elif user_input_command == 'switch':
-        items.item_light_switch['on'] = False
-        print(items.item_light_switch['description_2'])
-
-    elif user_input_command == 'button':
-        if not(items.item_light_switch['on']):
-            if user_input_command == items.item_button['name']:
-                inventory.append(items.item_key_2)
-                rooms.room_kitchen['door'] = True
-            else:
-                inventory.append(items.item_key_2)
+    elif user_input_command == 'mirror':
+        if (items.item_paper not in inventory) and (items.item_building_block not in inventory):
+            print("You see your reflection")
+        elif (items.item_paper in inventory) and (items.item_building_block not in inventory):
+            print(items.item_paper['description_2'])
+        elif items.item_paper and items.item_building_block in inventory:
+            inventory.append(items.item_key_3)
+            got_key.play()
+            rooms.room_kitchen['door'] = True
 
 
 def exe_observe(user_input_command):
@@ -242,6 +263,7 @@ def exe_command(user_input_lst):
             exe_observe(user_input_lst[1])
         else:
             print('Observe which item?')
+
     else:
         print('What are you doing?')
 
@@ -258,6 +280,10 @@ def print_menu():
     for values in current_room['items']:
         print(values.get('name'))
 
+    for values in current_room['items_not']:
+        print(values.get('name'))
+
+
     print('\nYou can: ')
     for direction, exit in current_room['exits'].items():
         print('GO ' + direction + ' to ' + exit)
@@ -265,19 +291,20 @@ def print_menu():
     if gc.current_riddle != items.item_title['Instructions']:
         print(gc.current_riddle)
 
-    if (items.item_key_1 in inventory) and not (has_printed_1) and has_used:
+    if (items.item_key_1 in inventory) and not (has_printed_1):
         print("\n" + items.item_riddle_candle['description_2'])
         print(items.item_key_1['description'])
         has_printed_1 = True
-        gc.current_riddle = items.item_note1['riddle_1']
+        gc.current_riddle = items.item_note1['riddle_2']
 
-    if (items.item_key_1 and items.item_key_2) in inventory and not(
-            has_printed_2):
-        print('\n' + items.item_button['description'])
-        print(items.item_key_2['description'])
-        has_printed_2 = True
-        gc.current_riddle = items.item_note1['riddle_1']
+    if (items.item_key_3 in inventory) and not (has_printed_3):
+        print("\n" + items.item_key_3['description'])
+        has_printed_3 = True
 
+    if (items.item_key_4 in inventory) and not (has_printed_4):
+        print("\n" + items.item_riddle_clock['description_2'])
+        print(items.item_key_4['description'])
+        has_printed_4 = True
 
 
 def main():
