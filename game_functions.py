@@ -139,16 +139,19 @@ def exe_take(item_id):
     try:
         item_in_room = items_id[item_id]
 
-        if (items.item_light_switch or items.item_button) in current_room[
-            'items']:
-            print('You cannot take that')
+        if item_in_room == items.item_light_switch:
+            print('You cannot take this1')
+            return
+
+        if item_in_room == items.item_button:
+            print('you cannot take this1')
             return
 
         if current_room['items']:
             item_lst = current_room['items']
 
             if item_in_room not in item_lst:
-                print('You cannot take this')
+                print('You cannot take this2')
 
             for item in item_lst:
                 if item == item_in_room:
@@ -158,7 +161,7 @@ def exe_take(item_id):
                     current_room['items'].remove(item)
 
     except KeyError:
-        print('You cannot take this')
+        print('You cannot take this3')
 
 
 def exe_interact(user_input_command):
@@ -169,6 +172,8 @@ def exe_interact(user_input_command):
     global inventory
     global current_dialogue
     global has_printed_1
+    global rooms
+    global items
     pickup_note = pygame.mixer.Sound("note.ogg")
     matchstick_sound = pygame.mixer.Sound("matchstick.ogg")
     got_key = pygame.mixer.Sound("got_key.ogg")
@@ -199,8 +204,21 @@ def exe_interact(user_input_command):
                 pickup_note.play()
         else:
             print("You don't have a note")
-            
-    
+
+    elif user_input_command == 'switch':
+        items.item_light_switch['switch'] = False
+        print(items.item_light_switch['description_2'])
+        rooms.room_nursery['items_not'].append(items.item_button)
+        items.item_button['on'] = True
+
+    elif user_input_command == 'button':
+        if items.item_button['on']:
+            inventory.append(items.item_key_2)
+            got_key.play()
+            rooms.room_bathroom['door'] = True
+        else:
+            print('...')
+
     elif user_input_command == 'clock':
         if items.item_pendulum in inventory:
             if user_input_command == items.item_riddle_clock['name']:
@@ -211,26 +229,41 @@ def exe_interact(user_input_command):
             print("This clock is missing something...")
 
     elif user_input_command == 'mirror':
-        if (items.item_paper not in inventory) and (items.item_building_block not in inventory):
+        if (items.item_paper not in inventory) and (
+                items.item_building_block not in inventory):
             print("You see your reflection")
-        elif (items.item_paper in inventory) and (items.item_building_block not in inventory):
+        elif (items.item_paper in inventory) and (
+                items.item_building_block not in inventory):
             print(items.item_paper['description_2'])
         elif items.item_paper and items.item_building_block in inventory:
             inventory.append(items.item_key_3)
             got_key.play()
             rooms.room_kitchen['door'] = True
 
+    else:
+        print('You cannot interact with this')
+
 
 def exe_observe(user_input_command):
     """This function will allow the player to examine the item, it will
     essentially output the item description to the user"""
     global inventory
-    global items
+    global current_room
 
     try:
-        if inventory or current_room['items_not']:
-            item_to_observe = items_id[user_input_command]
+        item_to_observe = items_id[user_input_command]
+
+        if item_to_observe in inventory:
+                print(item_to_observe['description'])
+
+        elif item_to_observe in current_room['items']:
             print(item_to_observe['description'])
+
+        elif item_to_observe in current_room['items_not']:
+            print(item_to_observe['description'])
+
+        else:
+            print('You cannot observe this')
     except KeyError:
         print('You cannot observe this')
 
@@ -280,11 +313,15 @@ def print_menu():
     for values in current_room['items']:
         print(values.get('name'))
 
-    for values in current_room['items_not']:
-        print(values.get('name'))
+    if current_room['items_not']:
+        for values in current_room['items_not']:
+            if values == items.item_button:
+                if items.item_light_switch['switch'] == False:
+                    print(values.get('name'))
+            else:
+                print(values.get('name'))
 
-
-    print('\nYou can: ')
+    print('\nYou can: (go/take/interact/observe)')
     for direction, exit in current_room['exits'].items():
         print('GO ' + direction + ' to ' + exit)
 
@@ -296,6 +333,13 @@ def print_menu():
         print(items.item_key_1['description'])
         has_printed_1 = True
         gc.current_riddle = items.item_note1['riddle_2']
+
+    if (items.item_key_1 and items.item_key_2) in inventory and not(
+            has_printed_2):
+        print('\n' + items.item_button['description_2'])
+        print(items.item_key_2['description'])
+        has_printed_2 = True
+        gc.current_riddle = items.item_note1['riddle_3']
 
     if (items.item_key_3 in inventory) and not (has_printed_3):
         print("\n" + items.item_key_3['description'])
