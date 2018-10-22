@@ -1,6 +1,6 @@
 # all player details are placed in this file
 import items
-inventory = [ items.item2 ]
+inventory = [items.item_note1]
 key_counter = 0
 has_printed_1 = False
 has_printed_2 = False
