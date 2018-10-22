@@ -112,7 +112,6 @@ amazing
 American
 among
 amount
-an
 analysis
 analyst
 analyze
@@ -298,7 +297,6 @@ blade
 blame
 blanket
 blind
-block
 blood
 blow
 blue
@@ -474,7 +472,6 @@ climate
 climb
 clinic
 clinical
-clock
 close
 closely
 closer
@@ -810,7 +807,6 @@ dominate
 door
 double
 doubt
-down
 downtown
 dozen
 draft
@@ -1660,7 +1656,6 @@ minor
 minority
 minute
 miracle
-mirror
 miss
 missile
 mission
@@ -1782,7 +1777,6 @@ object
 objective
 obligation
 observation
-observe
 observer
 obtain
 obvious
@@ -1875,7 +1869,6 @@ palm
 pan
 panel
 pant
-paper
 parent
 park
 parking
@@ -1933,7 +1926,6 @@ phase
 phenomenon
 philosophy
 phone
-photo
 photograph
 photographer
 phrase
@@ -2819,7 +2811,6 @@ unlike
 unlikely
 until
 unusual
-up
 upon
 upper
 urban
