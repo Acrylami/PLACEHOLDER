@@ -220,6 +220,23 @@ item_mirror = {
 
 }
 
+item_bath = {
+    'name': 'bath tub',
+
+    'description': 'a bath tub,it looks recently used',
+}
+
+item_sink = {
+    'name': 'sink',
+
+    'description': 'there is a sink and you feel the need to wash your hands, but you dont know why',
+}
+item_cabinet = {
+    'name': 'cabinet',
+
+    'description': 'there is a cabinet',
+}
+
 item_light_switch = {
     'switch': True,
 
