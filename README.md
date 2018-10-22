@@ -12,10 +12,12 @@ As you progress through the game you learn more and more about where you really 
 ## Rooms:
 
 First floor:
+  * Stairs
   * Lobby
   * Kitchen
   * Bathroom(Locked)
 Second Floor: 
+  * Landing Area
   * Bedroom
   * Nursery(Locked)
 
@@ -23,9 +25,10 @@ Second Floor:
 
 Lobby
 * Coat rack
-* Photo Frame
 * Big staircase
 
+Landing Area
+* Photo Frame (Kirill goes here)
 
 Kitchen
 * Counter
