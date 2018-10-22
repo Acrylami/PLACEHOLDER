@@ -113,7 +113,11 @@ def exe_go(direction):
             else:
                 print("You cannot go there.")
         else:
-            print('The door is locked. You need a key')
+                print("""This large embroidered door appears to be locked with 
+                  chains and a padlock with 4 keyholes. The lock seems 
+                  very sturdy and robust, it doesn'\t seem I can break this 
+                  open. The only way to open this lock is to find 4 keys...
+                  """)
     except KeyError:
         pass
 
