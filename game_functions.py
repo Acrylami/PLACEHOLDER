@@ -103,17 +103,19 @@ def exe_go(direction):
     global current_room
     footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
-    #a = current_room['exits']
     room_door = current_room['exits'][direction]
-    if rooms.rooms_id[room_door]['door']:
-        if exit:
-            footsteps.set_volume(0.8)
-            footsteps.play()
-            current_room = move(current_room['exits'], direction)
+    try:
+        if rooms.rooms_id[room_door]['door']:
+            if exit:
+                footsteps.set_volume(0.8)
+                footsteps.play()
+                current_room = move(current_room['exits'], direction)
+            else:
+                print("You cannot go there.")
         else:
-            print("You cannot go there.")
-    else:
-        print('The door is locked. You need a key')
+            print('The door is locked. You need a key')
+    except KeyError:
+        pass
 
 
 def exe_take(item_id):
@@ -145,6 +147,10 @@ def exe_take(item_id):
 
 
 def exe_interact(user_input_command):
+    """This function will allow the player to interact with objects within a
+    room and if they managed to solve the riddle by interacting with the
+    right item, then one of four keys will be appended to their inventory,
+    this will only work for the items that we have coded in here"""
     global inventory
     global current_dialogue
     pickup_note = pygame.mixer.Sound("note.ogg")
@@ -157,7 +163,7 @@ def exe_interact(user_input_command):
                 else:
                     inventory.append(items.item_key_1)
         else:
-            print("You dont have anything to light the candle with.")
+            print("You don'\t have anything to light the candle with.")
 
     elif user_input_command == "note":
         if items.item_note1 in inventory:
@@ -165,10 +171,12 @@ def exe_interact(user_input_command):
                 gc.current_riddle = items.item_note1['riddle_1']
                 pickup_note.play()
         else:
-            print("You dont have a note")
+            print("You don'\t have a note")
 
 
 def exe_observe(user_input_command):
+    """This function will allow the player to examine the item, it will
+    essentially output the item description to the user"""
     global inventory
     global items
 
@@ -178,6 +186,7 @@ def exe_observe(user_input_command):
             print(item_to_observe['description'])
     except KeyError:
         print('You cannot observe this')
+
 
 def exe_command(user_input_lst):
     """function will check the first item, in which it will then either call
@@ -206,7 +215,7 @@ def exe_command(user_input_lst):
         if len(user_input_lst) > 1:
             exe_observe(user_input_lst[1])
         else:
-            print('Interact with which item?')
+            print('Observe which item?')
 
     else:
         print('What are you doing?')
