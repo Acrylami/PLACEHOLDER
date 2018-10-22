@@ -137,6 +137,11 @@ def exe_take(item_id):
     try:
         item_in_room = items_id[item_id]
 
+        if (items.item_light_switch or items.item_button) in current_room[
+            'items']:
+            print('You cannot take that')
+            return
+
         if current_room['items']:
             item_lst = current_room['items']
 
@@ -182,6 +187,18 @@ def exe_interact(user_input_command):
         else:
             print("You don't have a note")
 
+    elif user_input_command == 'switch':
+        items.item_light_switch['on'] = False
+        print(items.item_light_switch['description_2'])
+
+    elif user_input_command == 'button':
+        if not(items.item_light_switch['on']):
+            if user_input_command == items.item_button['name']:
+                inventory.append(items.item_key_2)
+                rooms.room_kitchen['door'] = True
+            else:
+                inventory.append(items.item_key_2)
+
 
 def exe_observe(user_input_command):
     """This function will allow the player to examine the item, it will
@@ -190,7 +207,7 @@ def exe_observe(user_input_command):
     global items
 
     try:
-        if inventory:
+        if inventory or current_room['items_not']:
             item_to_observe = items_id[user_input_command]
             print(item_to_observe['description'])
     except KeyError:
@@ -219,13 +236,12 @@ def exe_command(user_input_lst):
         if len(user_input_lst) > 1:
             exe_interact(user_input_lst[1])
         else:
-            print('Your answer to your the riddle?')
+            print('Your answer to the riddle?')
     elif user_input_lst[0] == 'observe':
         if len(user_input_lst) > 1:
             exe_observe(user_input_lst[1])
         else:
             print('Observe which item?')
-
     else:
         print('What are you doing?')
 
@@ -249,10 +265,19 @@ def print_menu():
     if gc.current_riddle != items.item_title['Instructions']:
         print(gc.current_riddle)
 
-    if (items.item_key_1 in inventory) and not (has_printed_1):
+    if (items.item_key_1 in inventory) and not (has_printed_1) and has_used:
         print("\n" + items.item_riddle_candle['description_2'])
         print(items.item_key_1['description'])
         has_printed_1 = True
+        gc.current_riddle = items.item_note1['riddle_1']
+
+    if (items.item_key_1 and items.item_key_2) in inventory and not(
+            has_printed_2):
+        print('\n' + items.item_button['description'])
+        print(items.item_key_2['description'])
+        has_printed_2 = True
+        gc.current_riddle = items.item_note1['riddle_1']
+
 
 
 def main():
