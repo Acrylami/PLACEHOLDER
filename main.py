@@ -19,8 +19,7 @@ background_music = pygame.mixer.Sound("OST.ogg")
 # and events are tested and ran here
 # main game loop
 def game():
-    background_music.set_volume(0.5)
-    background_music.play(-1)
+
     print(items.item_title['Title'])
     input("""\n\t\t\t\t\t\t\t\t  PRESS ENTER TO CONTINUE""")
     os.system('cls')
@@ -31,6 +30,8 @@ def game():
           "TYPE 'interact note' to see your first riddle.")
     gf.main()
     os.system('cls')
+    background_music.set_volume(0.5)
+    background_music.play(-1)
 
     while True:
         # this is just a test to see if this function can run
