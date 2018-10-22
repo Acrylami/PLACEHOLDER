@@ -236,6 +236,11 @@ item_cabinet = {
 
     'description': 'there is a cabinet',
 }
+item_toilet = {
+    'name': 'toilett',
+
+    'description': 'there is a toilet',
+}
 
 item_light_switch = {
     'switch': True,
