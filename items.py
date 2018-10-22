@@ -270,6 +270,16 @@ item_building_block = {
     'description': 'there is a building block'
 }
 
+item_paper = {
+
+    'name': 'paper',
+
+    'description': '',
+
+    'description_2': '',
+
+}
+
 items_id = {
     'note': item_note1,
     # a, b and c are placeholders
@@ -283,7 +293,8 @@ items_id = {
     'sink':item_sink,
     'toilet':item_toilet,
     'cabinet':item_cabinet,
-    'block':'item_building_block',
+    'block':item_building_block,
+    'paper':item_paper,
     
-    
+
 }
