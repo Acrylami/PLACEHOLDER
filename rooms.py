@@ -28,7 +28,7 @@ room_kitchen = {
 
     'description': 'A kitchen and a dinning room',
 
-    'items': [items.item_riddle_clock, items.item_pendulum],
+    'items': [items.item_riddle_clock, ],
 
     'items_not': [],
 
@@ -43,9 +43,9 @@ room_bathroom = {
 
     'description': '',
 
-    'items': [items.item_paper, items.item_building_block],
+    'items': [items.item_paper,],
 
-    'items_not': [items.item_bath, items.item_sink, items.item_toilet, items.item_cabinet, 
+    'items_not': [items.item_bath, items.item_sink, items.item_toilet, items.item_cabinet,
     items.item_mirror],
 
     'exits': {'west': 'lobby'},
@@ -59,7 +59,8 @@ room_nursery = {
 
     'description': '',
 
-    'items': [],
+    'items': [items.item_building_block, items.item_light_switch,
+              items.item_pendulum],
 
     'items_not': [],
 
