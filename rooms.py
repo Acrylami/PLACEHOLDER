@@ -45,7 +45,7 @@ room_nursery = {
 
     'description': '',
 
-    'items': [],
+    'items': [items.item_building_block],
 
     'exits': {'east': 'landing floor', },
 
