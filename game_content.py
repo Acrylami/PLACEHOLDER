@@ -1,17 +1,24 @@
 import items
 # contain all the storyline/ dialogue
 
-current_riddle = items.item_title['Instructions']
+current_riddle = ""
 
 # Will contain the opening plot information
 opening_dialogue = {
     "description":
 
     # all dialogue will follow this layout to outputted properly
-    """\n\t\t\t\t\t\tYou wake up lying in a pool of blood on a hard wooden 
-\t\t\t\t\t\tfloor, staring up at a dimly lit chandelier covered in cobwebs on the 
-\t\t\t\t\t\tceiling. Next to you is a heavy locked door. There are 4 keyholes. 
-\t\t\t\t\t\tHow did you get here? You must escape.""",
+    """\n\n\n\n\n\n\n\n\n\n         
+        You wake up lying in a pool of blood on a hard wooden 
+  ceiling. Next to you is a heavy locked door. There are 4 keyholes. 
+              How did you get here? You must escape.""",
+}
+
+filler_dialogue = {
+
+    "description":
+    """TESTTT""",
+
 }
 
 key1_dialogue = {
