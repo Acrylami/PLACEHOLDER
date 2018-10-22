@@ -21,6 +21,12 @@ background_music = pygame.mixer.Sound("OST.ogg")
 def game():
     background_music.set_volume(0.5)
     background_music.play(-1)
+    print(items.item_title['Title'])
+    input("""\n\t\t\t\t\t\t\t\t  PRESS ENTER TO CONTINUE""")
+    os.system('cls')
+    print(gc.opening_dialogue['description'])
+    input('\n\t\t\t\t\t\t\t\t  PRESS ENTER TO CONTINUE')
+    os.system('cls')
     while True:
         # this is just a test to see if this function can run
         print(items.item_title['Title'])
