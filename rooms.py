@@ -33,6 +33,8 @@ room_bathroom = {
     'description': '',
 
     'items': [items.item_mirror],
+    
+    'items_not': [items.item_bath,items.item_sink,items.item_toilet,items.item_cabinet],
 
     'exits': {'west': 'lobby'},
 
