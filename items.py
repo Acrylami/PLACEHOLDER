@@ -118,70 +118,73 @@ item_note1 = {
 }
 
 item_key_1 = {
-    'name': 'key 1',
+    'name': 'key for main door',
 
     'description': """
-                        .oso:                              
-                        :m- `yo                             
-                     .yyhm` -hs`:`                          
-                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
-                     .syhm` -hs.:                :hdMMNhs   
-                        :m- `ho                  /MdmMyMh   
-                         .oso:                   -o::o`o+   
+   .oso:                              
+  :m- `yo                             
+ .yyhm` -hs`:`                          
+ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+ .syhm` -hs.:                :hdMMNhs   
+  :m- `ho                  /MdmMyMh   
+   .oso:                   -o::o`o+   
 
-          You have obtained ONE of the FOUR keys to unlock the main door.
-                        You now have access to the NURSERY.
+You have obtained ONE of the FOUR keys to unlock the main door.
+           You now have access to the NURSERY.
 """,
 
 }
 
 item_key_2 = {
-    'name': 'key 2',
+    'name': 'key for main door',
 
     'description': """
-                        .oso:                              
-                        :m- `yo                             
-                     .yyhm` -hs`:`                          
-                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
-                     .syhm` -hs.:                :hdMMNhs   
-                        :m- `ho                  /MdmMyMh   
-                         .oso:                   -o::o`o+   
+   .oso:                              
+  :m- `yo                             
+ .yyhm` -hs`:`                          
+ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+ .syhm` -hs.:                :hdMMNhs   
+  :m- `ho                  /MdmMyMh   
+   .oso:                   -o::o`o+   
 
-                                 YOU GOT 1 KEY
+You have obtained TWO of the FOUR keys to unlock the main door.
+           You now have access to the BATHROOM.
 """,
 
 }
 
 item_key_3 = {
-    'name': 'key 3',
+    'name': 'key for main door',
 
     'description': """
-                        .oso:                              
-                        :m- `yo                             
-                     .yyhm` -hs`:`                          
-                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
-                     .syhm` -hs.:                :hdMMNhs   
-                        :m- `ho                  /MdmMyMh   
-                         .oso:                   -o::o`o+   
+   .oso:                              
+  :m- `yo                             
+ .yyhm` -hs`:`                          
+ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+ .syhm` -hs.:                :hdMMNhs   
+  :m- `ho                  /MdmMyMh   
+   .oso:                   -o::o`o+   
 
-                                 YOU GOT 1 KEY
+You have obtained THREE of the FOUR keys to unlock the main door.
+           You now have access to the KITCHEN.
 """,
 
 }
 
 item_key_4 = {
-    'name': 'key 4',
+    'name': 'key for main door',
 
     'description': """
-                        .oso:                              
-                        :m- `yo                             
-                     .yyhm` -hs`:`                          
-                     ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
-                     .syhm` -hs.:                :hdMMNhs   
-                        :m- `ho                  /MdmMyMh   
-                         .oso:                   -o::o`o+   
+   .oso:                              
+  :m- `yo                             
+ .yyhm` -hs`:`                          
+ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
+ .syhm` -hs.:                :hdMMNhs   
+  :m- `ho                  /MdmMyMh   
+   .oso:                   -o::o`o+   
 
-                                 YOU GOT 1 KEY
+You have obtained FOUR of the FOUR keys to unlock the main door.
+           You now have access to the MAIN DOOR.
 """,
 
 }
