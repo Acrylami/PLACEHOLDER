@@ -269,5 +269,10 @@ items_id = {
     'button': item_button,
     'mirror': item_mirror,
     'pendulum': item_pendulum,
+    'bath': item_bath,
+    'sink':item_sink,
+    'toilet':item_toilet,
+    'cabinet':item_cabinet,
+    
     
 }
