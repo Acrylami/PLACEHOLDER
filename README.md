@@ -23,21 +23,14 @@ Second Floor:
 
 Lobby
 * Coat rack
- * Coat with note in pocket
-* Chest of drawers
- * Torch
 * Photo Frame
 * Big staircase
- * Creaky step that has hidden compartment underneath
-* Statues that are missing an item e.g. an eye 
-* Ornate chair
+
 
 Kitchen
 * Counter
 * Fridge
 * Oven
-* Cupboards
-* Pots and pans hanging 
 * Locked drawer
 
 Bathroom
@@ -49,14 +42,11 @@ Bathroom
 Bedroom
 * 4 poster canopy bed
 * Wardrobe
-* Window (locked)
 * Vanity table
 * Writing desk (may move this to a study room)
 
 Nursery
 * Cot
-* Children's toys
-* Rocking horse
 * Building blocks
 * Creepy doll
 
