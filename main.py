@@ -27,6 +27,11 @@ def game():
     print(gc.opening_dialogue['description'])
     input('\n\t\t\t\t\t\t\t\t  PRESS ENTER TO CONTINUE')
     os.system('cls')
+    print("\n\t\t\t\t\t\tYou have a note in your pocket, "
+          "TYPE 'interact note' to see your first riddle.")
+    gf.main()
+    os.system('cls')
+
     while True:
         # this is just a test to see if this function can run
         print(items.item_title['Title'])
