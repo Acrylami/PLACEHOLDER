@@ -264,6 +264,11 @@ item_pendulum = {
 """
 }
 
+item_bulding_block = {
+    'name': 'building block'
+    
+    'description': 'there is a building block'
+
 
 items_id = {
     'note': item_note1,
