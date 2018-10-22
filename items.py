@@ -264,8 +264,8 @@ item_pendulum = {
 """
 }
 
-item_bulding_block = {
-    'name': 'building block'
+item_building_block = {
+    'name': 'block'
     
     'description': 'there is a building block'
 }
@@ -283,6 +283,7 @@ items_id = {
     'sink':item_sink,
     'toilet':item_toilet,
     'cabinet':item_cabinet,
+    'block':'item_building_block',
     
     
 }
