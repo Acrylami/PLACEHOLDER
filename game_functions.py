@@ -9,14 +9,12 @@ import pygame
 import time
 import items
 
-
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
     global current_room
     print()
     print('You are in the ' + current_room['name'].upper())
-    print()
-
+    print(current_room['description'].upper())
 
 def print_dialogue():
     """Will take a form of dialogue as an argument, and display it properly"""
@@ -103,7 +101,6 @@ def exe_go(direction):
     room in question, and the room which the player is currently in will be
     the new current room"""
     global current_room
-    global key_counter
     footsteps = pygame.mixer.Sound("Footsteps.ogg")
     exit = is_exit_valid(current_room['exits'], direction)
     try:
@@ -115,20 +112,25 @@ def exe_go(direction):
                     footsteps.play()
                     current_room = move(current_room['exits'], direction)
                 else:
-                    print("You cannot go there.")
+                    print("You cannot go there1.")
             else:
                 print('The door is locked. You need a key')
         else:
-            print("""
-This large embroidered door appears to be locked with 
-chains and a padlock with 4 keyholes. The lock seems 
-very sturdy and robust, it doesn't seem I can break this 
-open. The only way to open this lock is to find 4 keys...\n""")
+            rooms.room_main_door['opened'] = True
+
     except KeyError:
-        print('You cannot go there')
+        print('You cannot go there2.')
 
 
-try:
+def exe_take(item_id):
+    """given the item id, the player can pickup objects from the room,
+    and this will be added to the player inventory, and removed from the
+    current room items"""
+    global current_room
+    global inventory
+    pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
+
+    try:
         item_in_room = items_id[item_id]
 
         if item_in_room == items.item_light_switch:
@@ -162,8 +164,8 @@ try:
                     inventory.append(item)
                     current_room['items'].remove(item)
 
-except KeyError:
-    print('You cannot take this.')
+    except KeyError:
+        print('You cannot take this.')
 
 
 def exe_interact(user_input_command):
@@ -273,10 +275,6 @@ def exe_observe(user_input_command):
     except KeyError:
         print('You cannot observe this')
 
-def exe_help():
-    """Player type 'help' to see the instructions whenever they want"""
-    print(items.item_title['Instructions'])
-
 
 def exe_command(user_input_lst):
     """function will check the first item, in which it will then either call
@@ -306,24 +304,10 @@ def exe_command(user_input_lst):
             exe_observe(user_input_lst[1])
         else:
             print('Observe which item?')
-    elif user_input_lst[0] == 'help':
-        if len(user_input_lst) == 1:
-            exe_help()
-        else:
-            print("You must type only 'help' to show the instructions")
 
     else:
         print('What are you doing?')
 
-
-def interact_note(user_input):
-    """Function specific for the opening dialogue"""
-
-    while user_input != 'interact note':
-        print("You need to type in 'interact note' to see your first riddle")
-        user_input = input('>')
-    else:
-        exe_interact('note')
 
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
@@ -385,9 +369,5 @@ def main():
 
     # normal the input
     normal_user_input = normal_input(user_input)
-    
+        
     exe_command(normal_user_input)
-    
-    if (rooms.room_main_door['door'] == True) and (normal_user_input == "south") and (current_room == rooms.room_lobby):
-        print ("CONGRATULATIONS")
-        return False
