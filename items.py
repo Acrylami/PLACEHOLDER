@@ -299,7 +299,7 @@ item_cabinet = {
 item_cot = {
     'name': 'cot',
 
-    'description': 'A smallbed for a child, filled with blankets and stuffed toys',
+    'description': 'A small bed for a child, filled with blankets and stuffed toys',
 }
 
 item_doll = {
