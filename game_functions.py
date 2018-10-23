@@ -9,12 +9,14 @@ import pygame
 import time
 import items
 
+
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
     global current_room
     print()
     print('You are in the ' + current_room['name'].upper())
     print(current_room['description'].upper())
+
 
 def print_dialogue():
     """Will take a form of dialogue as an argument, and display it properly"""
@@ -112,17 +114,14 @@ def exe_go(direction):
                     footsteps.play()
                     current_room = move(current_room['exits'], direction)
                 else:
-                    print("You cannot go there.")
+                    print("You cannot go there1.")
             else:
                 print('The door is locked. You need a key')
-
         else:
-            if rooms.rooms_id[room_door]['door'] == True:
-                rooms.room_main_door['opened'] = True
-            else:
-                print('The door is locked. You need a key')
+            rooms.room_main_door['opened'] = True
+
     except KeyError:
-        print('You cannot go there.')
+        print('You cannot go there2.')
 
 
 def exe_take(item_id):
@@ -286,7 +285,7 @@ def exe_observe(user_input_command):
         item_to_observe = items_id[user_input_command]
 
         if item_to_observe in inventory:
-                print(item_to_observe['description'])
+            print(item_to_observe['description'])
 
         elif item_to_observe in current_room['items']:
             print(item_to_observe['description'])
@@ -360,6 +359,7 @@ def interact_note(user_input):
     else:
         exe_interact('note')
 
+
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
     global has_printed_1
@@ -382,10 +382,10 @@ def print_menu():
 
     print('\nYou can: (go/take/interact/observe)')
     for direction, exit in current_room['exits'].items():
-        if current_room['door'] == True:
+        if rooms.rooms_id[exit]['door']:
             print('GO ' + direction + ' to ' + exit)
         else:
-            print('GO ' + direction + ' to ' + exit + "(locked)")
+            print('GO ' + direction + ' to ' + exit + ' (LOCKED)')
 
     if gc.current_riddle != items.item_title['Instructions']:
         print(gc.current_riddle)
@@ -396,7 +396,7 @@ def print_menu():
         has_printed_1 = True
         gc.current_riddle = items.item_note1['riddle_2']
 
-    if (items.item_key_1 and items.item_key_2) in inventory and not(
+    if (items.item_key_1 and items.item_key_2) in inventory and not (
             has_printed_2):
         print('\n' + items.item_button['description_2'])
         print(items.item_key_2['description'])
@@ -423,5 +423,5 @@ def main():
 
     # normal the input
     normal_user_input = normal_input(user_input)
-        
+
     exe_command(normal_user_input)
