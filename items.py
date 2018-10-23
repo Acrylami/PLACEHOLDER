@@ -331,7 +331,7 @@ item_fridge = {
     'description': 'a fridge with just an empty jar of mayonnaise on ir ',
 }
 item_sink = {
-    'name': 'cot',
+    'name': 'sink',
 
     'description': 'dirty sink',
 }
