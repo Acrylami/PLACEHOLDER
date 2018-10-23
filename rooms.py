@@ -8,9 +8,9 @@ room_main_door = {
 
     'description': 'The only exit out of this mansion',
 
-    'door': True,
+    'door': False,
 
-    'opened': True,
+    'opened': False,
 
 }
 
