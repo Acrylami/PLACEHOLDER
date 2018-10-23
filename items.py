@@ -77,7 +77,7 @@ item_note1 = {
      '------------------------------------                       
     """,
 
-    'riddle_3': """    
+    'riddle_4': """    
     .-.---------------------------------.-.
    ((o))                                   )
     \W/_______          _____         ____/
@@ -97,7 +97,7 @@ item_note1 = {
      '------------------------------------                       
     """,
 
-    'riddle_4': """    
+    'riddle_3': """    
     .-.---------------------------------.-.
    ((o))                                   )
     \W/_______          _____         ____/
@@ -128,7 +128,7 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
-   
+
 You have obtained ONE of the FOUR keys to unlock the main door.
            You now have access to the NURSERY.
 """,
@@ -146,7 +146,7 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
-   
+
 You have obtained TWO of the FOUR keys to unlock the main door.
            You now have access to the BATHROOM.
 """,
@@ -164,7 +164,7 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+  
-   
+
 You have obtained THREE of the FOUR keys to unlock the main door.
            You now have access to the KITCHEN.
 """,
@@ -182,7 +182,7 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+ 
-   
+
 You have obtained FOUR of the FOUR keys to unlock the main door.
            You now have access to the MAIN DOOR.
 """,
@@ -276,7 +276,6 @@ item_mirror = {
 
 }
 
-
 item_bath = {
     'name': 'bath tub',
 
@@ -288,7 +287,6 @@ item_toilet = {
 
     'description': 'there is a toilet',
 }
-
 
 item_cabinet = {
     'name': 'cabinet',
@@ -411,10 +409,10 @@ item_light_switch = {
                    'off',
 
     'description_2':
-"""After turning the light off, the stars on the wallpaper illuminate. On
-one side of the room, there seems to be a large cluster of stars grouped
-together. You go towards it...
-""",
+        """After turning the light off, the stars on the wallpaper illuminate. On
+        one side of the room, there seems to be a large cluster of stars grouped
+        together. You go towards it...
+        """,
 }
 
 item_button = {
@@ -425,10 +423,10 @@ item_button = {
     'description': 'A glowing button',
 
     'description_2':
-"""You've pressed the button, a brightly lit compartment is opened in the side
-of the room. You walk towards the compartment to find a key burrowed within
-it.
-"""
+        """You've pressed the button, a brightly lit compartment is opened in the side
+        of the room. You walk towards the compartment to find a key burrowed within
+        it.
+        """
 }
 
 item_building_block = {
@@ -457,14 +455,12 @@ items_id = {
     'block': item_building_block,
     'oven': item_oven,
     'fridge': item_fridge,
-    'wardrobe':item_wardrobe,
+    'wardrobe': item_wardrobe,
     'desk': item_desk,
-    'bed':item_bed,
-    'cot':item_cot,
-    'doll':item_doll,
-    'rack':item_rack,
-    'picture':item_picture,
-    
-
+    'bed': item_bed,
+    'cot': item_cot,
+    'doll': item_doll,
+    'rack': item_rack,
+    'picture': item_picture,
 
 }
