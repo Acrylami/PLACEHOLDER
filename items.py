@@ -314,8 +314,8 @@ item_rack = {
     'description': 'A coat rack',
 }
 
-item_photo = {
-    'name': 'photo',
+item_picture = {
+    'name': 'picture',
 
     'description': 'A photo of a smiling couple and a child.',
 }
@@ -463,7 +463,7 @@ items_id = {
     'cot':item_cot,
     'doll':item_doll,
     'rack':item_rack,
-    'photo':item_photo,
+    'picture':item_picture,
     
 
 
