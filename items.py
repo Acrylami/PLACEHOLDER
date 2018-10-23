@@ -128,6 +128,7 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
+   
 You have obtained ONE of the FOUR keys to unlock the main door.
            You now have access to the NURSERY.
 """,
@@ -145,6 +146,7 @@ ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
    .oso:                   -o::o`o+   
+   
 You have obtained TWO of the FOUR keys to unlock the main door.
            You now have access to the BATHROOM.
 """,
@@ -161,7 +163,8 @@ item_key_3 = {
 ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
-   .oso:                   -o::o`o+   
+   .oso:                   -o::o`o+  
+   
 You have obtained THREE of the FOUR keys to unlock the main door.
            You now have access to the KITCHEN.
 """,
@@ -178,7 +181,8 @@ item_key_4 = {
 ys  `yNMMMMMmddddddddmmmmmmmmmmNNmmdmo 
  .syhm` -hs.:                :hdMMNhs   
   :m- `ho                  /MdmMyMh   
-   .oso:                   -o::o`o+   
+   .oso:                   -o::o`o+ 
+   
 You have obtained FOUR of the FOUR keys to unlock the main door.
            You now have access to the MAIN DOOR.
 """,
@@ -296,6 +300,29 @@ item_cabinet = {
     'description': 'there is a cabinet',
 }
 
+item_cot = {
+    'name': 'cot',
+
+    'description': 'A smallbed for a child, filled with blankets and stuffed toys',
+}
+
+item_doll = {
+    'name': 'doll',
+
+    'description': 'An old doll with a big smile',
+}
+
+item_rack = {
+    'name': 'rack',
+
+    'description': 'A coat rack',
+}
+
+item_photo = {
+    'name': 'photo',
+
+    'description': 'A photo of a smiling couple and a child.',
+}
 item_paper = {
 
     'name': 'paper',
