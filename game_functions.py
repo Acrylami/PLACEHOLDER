@@ -128,30 +128,32 @@ open. The only way to open this lock is to find 4 keys...\n""")
         print('You cannot go there')
 
 
-def exe_take(item_id):
-    """given the item id, the player can pickup objects from the room,
-    and this will be added to the player inventory, and removed from the
-    current room items"""
-    global current_room
-    global inventory
-    pickup_sound = pygame.mixer.Sound("pickupsound.ogg")
-
-    try:
+try:
         item_in_room = items_id[item_id]
 
         if item_in_room == items.item_light_switch:
-            print('You cannot take this1')
+            print('You cannot take this.')
             return
 
+        if item_in_room == items.item_pendulum:
+            if items.item_key_3 not in inventory:
+                print("I don't think I need this yet...")
+                return
+
+        if item_in_room ==items.item_building_block:
+            if items.item_key_2 not in inventory:
+                print("I don't think I need this yet...")
+                return
+
         if item_in_room == items.item_button:
-            print('you cannot take this1')
+            print('you cannot take this.')
             return
 
         if current_room['items']:
             item_lst = current_room['items']
 
             if item_in_room not in item_lst:
-                print('You cannot take this2')
+                print('You cannot take this.')
 
             for item in item_lst:
                 if item == item_in_room:
@@ -161,7 +163,7 @@ def exe_take(item_id):
                     current_room['items'].remove(item)
 
     except KeyError:
-        print('You cannot take this3')
+        print('You cannot take this.')
 
 
 def exe_interact(user_input_command):
@@ -177,6 +179,7 @@ def exe_interact(user_input_command):
     pickup_note = pygame.mixer.Sound("note.ogg")
     matchstick_sound = pygame.mixer.Sound("matchstick.ogg")
     got_key = pygame.mixer.Sound("got_key.ogg")
+    mirror= pygame.mixer.Sound("mirror.ogg")
     if user_input_command == "candle":
         if items.item_matchsticks in inventory:
             if user_input_command == items.item_riddle_candle['name']:
@@ -236,6 +239,9 @@ def exe_interact(user_input_command):
                 items.item_building_block not in inventory):
             print(items.item_paper['description_2'])
         elif items.item_paper and items.item_building_block in inventory:
+            mirror.set_volume(0.4)
+            mirror.play()
+            time.sleep(1.5)
             inventory.append(items.item_key_3)
             got_key.play()
             rooms.room_kitchen['door'] = True
