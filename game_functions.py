@@ -361,5 +361,9 @@ def main():
 
     # normal the input
     normal_user_input = normal_input(user_input)
-
+    
     exe_command(normal_user_input)
+    
+    if (rooms.room_main_door['door'] == True) and (normal_user_input == "south") and (current_room == rooms.room_lobby):
+        print ("CONGRATULATIONS")
+        return False
