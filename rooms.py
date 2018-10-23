@@ -4,7 +4,13 @@ import items
 
 room_main_door = {
 
-    'door': False,
+    'name': 'main door',
+
+    'description': 'The only exit out of this mansion',
+
+    'door': True,
+
+    'opened': False
 
 }
 
