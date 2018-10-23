@@ -8,9 +8,9 @@ room_main_door = {
 
     'description': 'The only exit out of this mansion',
 
-    'door': False,
+    'door': True,
 
-    'opened': False
+    'opened': True,
 
 }
 
@@ -36,7 +36,7 @@ room_kitchen = {
 
     'items': [items.item_riddle_clock, ],
 
-    'items_not': [items.item_oven, items.item_fridge, ],
+    'items_not': [items.item_oven, items.item_fridge,],
 
     'exits': {'east': 'lobby',},
 
