@@ -37,6 +37,7 @@ def game():
     user_input = input('> ')
     gf.get_help(user_input)
     print("You can TYPE 'help' anytime to see the game instructions")
+    input('PRESS ENTER TO CONTINUE')
     os.system('cls')
 
     # ask the user to do their first interact
