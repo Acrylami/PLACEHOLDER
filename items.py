@@ -341,6 +341,9 @@ item_paper = {
                 .,.                        /*   %@@&.          */    .,.        ,(       *@,         
                                             (   #@&             .                /                   
 
+
+
+ - OH IT SEEMS THAT I HAVE TO BREAK THIS MIRROR
 """,
 
 }
