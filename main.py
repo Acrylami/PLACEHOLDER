@@ -19,39 +19,61 @@ background_music = pygame.mixer.Sound("OST.ogg")
 # and events are tested and ran here
 # main game loop
 def game():
+    # print title of game
     os.system('cls')
     print(items.item_title['Title'])
     s = "PRESS ENTER TO CONTINUE"
     input(s.center(44))
     os.system('cls')
+
+    # print the opening dialogue of game
     print(gc.opening_dialogue['description'])
     input(s.center(70))
     os.system('cls')
+
+    # ask the user to do their first interact
     print("\n\n\n\n\n\n\n\n\n\nYou have a note in your pocket, "
           "TYPE 'interact note' to see your first riddle.")
-    gf.main()
+    user_input = input('>')
+    gf.interact_note(user_input)
     os.system('cls')
+
+    # play the music once game before main game loop
     background_music.set_volume(0.5)
     background_music.play(-1)
 
     while True:
-        # this is just a test to see if this function can run
-        print(items.item_title['Title'])
-        gf.print_dialogue()
-        gf.print_inventory(player.inventory)
-        gf.print_room()
-        gf.print_menu()
-        gf.main()
-        if rooms_id['main door']['opened']:
-            print('CONGRATULATIONS!!!!!')
-            break
-        input('PRESS ENTER TO CONTINUE')
-        os.system('cls')
 
-        # don't take out
+        # print the title of the game
+        print(items.item_title['Title'])
+
+        # print the dialogue for user events
+        gf.print_dialogue()
+
+        # show player their inventory
+        gf.print_inventory(player.inventory)
+
+        # output which room their in
+        gf.print_room()
+
+        # output the contents of the room, and if they earned a key
+        gf.print_menu()
+
+        # checks for user input, and is a parser
+        gf.main()
+
+        # checks to see if the user has opened the door, the user has won
+        # the game
+        if rooms_id['main door']['opened']:
+            print('CONGRATULATIONS')
+            break
+
+        input('PRESS ENTER TO CONTINUE')
+
+
+        # clear the screen after each run
+        os.system('cls')
 
 
 if __name__ == '__main__':
     game()
-
-#test
