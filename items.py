@@ -323,6 +323,37 @@ item_photo = {
 
     'description': 'A photo of a smiling couple and a child.',
 }
+
+item_oven = {
+    'name': 'cot',
+
+    'description': 'An oven, still warm',
+}
+item_fridge = {
+    'name': 'fridge',
+
+    'description': 'a fridge with just an empty jar of mayonnaise on ir ',
+}
+item_sink = {
+    'name': 'cot',
+
+    'description': 'dirty sink',
+}
+item_wardrobe = {
+    'name': 'wardrobe',
+
+    'description': 'a bif old wardrobe with victorian clothes',
+}
+item_desk = {
+    'name': 'desk',
+
+    'description': 'a writting desk cluttered, covered in nonsensical letters and drawings',
+}
+item_bed = {
+    'name': 'bed',
+
+    'description': 'a meesy bed',
+}
 item_paper = {
 
     'name': 'paper',
