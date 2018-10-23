@@ -30,12 +30,14 @@ def game():
     print(gc.opening_dialogue['description'])
     input(s.center(70))
     os.system('cls')
-    
+
     # ask the user for first help
     print("\n\n\n\n\n\n\n\n\n\n"
     "TYPE 'help' to see the game instructions")
     user_input = input('> ')
     gf.get_help(user_input)
+    print("You can TYPE 'help' anytime to see the game instructions")
+    os.system('cls')
 
     # ask the user to do their first interact
     print("\n\n\n\n\n\n\n\n\n\nYou have a note in your pocket, "
