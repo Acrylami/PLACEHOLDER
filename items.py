@@ -289,11 +289,7 @@ item_toilet = {
     'description': 'there is a toilet',
 }
 
-item_sink = {
-    'name': 'sink',
 
-    'description': 'there is a sink and you feel the need to wash your hands, but you dont know why',
-}
 item_cabinet = {
     'name': 'cabinet',
 
@@ -459,6 +455,16 @@ items_id = {
     'photo': item_photo_frame,
     'paper': item_paper,
     'block': item_building_block,
+    'oven': item_oven,
+    'fridge': item_fridge,
+    'wardrobe':item_wardrobe,
+    'desk': item_desk,
+    'bed':item_bed,
+    'cot':item_bed,
+    'doll':item_doll,
+    'rack':item_rack,
+    'photo':item_photo,
+    
 
 
 }
