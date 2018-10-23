@@ -8,7 +8,7 @@ room_main_door = {
 
     'description': 'The only exit out of this mansion',
 
-    'door': True,
+    'door': False,
 
     'opened': False
 
@@ -19,7 +19,7 @@ room_lobby = {
 
     'description': 'the main landing of the house',
 
-    'items': [items.item_note1],
+    'items': [],
 
     'items_not': [],
 
@@ -40,7 +40,7 @@ room_kitchen = {
 
     'exits': {'east': 'lobby',},
 
-    'door': True,
+    'door': False,
 
 }
 
@@ -65,10 +65,9 @@ room_nursery = {
 
     'description': '',
 
-    'items': [items.item_building_block, items.item_light_switch,
-              items.item_pendulum],
+    'items': [items.item_building_block, items.item_light_switch,],
 
-    'items_not': [items.item_bed, items.item_rack, items.item_cot,],
+    'items_not': [items.item_rack, items.item_cot,],
 
     'exits': {'east': 'landing floor', },
 
@@ -82,7 +81,8 @@ room_bedroom = {
     'description': '',
 
     'items': [items.item_riddle_candle,
-              items.item_matchsticks,],
+              items.item_matchsticks,
+              items.item_pendulum],
 
     'items_not': [items.item_wardrobe, items.item_desk, items.item_bed, items.item_picture,],
 
