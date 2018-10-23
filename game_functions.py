@@ -276,6 +276,11 @@ def exe_observe(user_input_command):
         print('You cannot observe this')
 
 
+def exe_help():
+    """Player type 'help' to see the instructions whenever they want"""
+    print(items.item_title['Instructions'])
+
+
 def exe_command(user_input_lst):
     """function will check the first item, in which it will then either call
     go, take or solve riddle"""
@@ -304,10 +309,24 @@ def exe_command(user_input_lst):
             exe_observe(user_input_lst[1])
         else:
             print('Observe which item?')
+    elif user_input_lst[0] == 'help':
+        if len(user_input_lst) == 1:
+            exe_help()
+        else:
+            print("You must type only 'help' to show the instructions")
 
     else:
         print('What are you doing?')
 
+
+def interact_note(user_input):
+    """Function specific for the opening dialogue"""
+
+    while user_input != 'interact note':
+        print("You need to type in 'interact note' to see your first riddle")
+        user_input = input('>')
+    else:
+        exe_interact('note')
 
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
