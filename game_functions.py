@@ -151,6 +151,7 @@ def exe_take(item_id):
 
         if item_in_room == items.item_riddle_candle:
             print("It has no use to me, if it is not lit up")
+            return
 
         if item_in_room == items.item_button:
             print('you cannot take this.')
@@ -231,7 +232,7 @@ def exe_interact(user_input_command):
             print('...')
 
     elif user_input_command == 'button':
-        if items.item_button in current_room['items']:
+        if items.item_button in current_room['items_not']:
             if items.item_button['on']:
                 inventory.append(items.item_key_2)
                 got_key.play()
@@ -406,6 +407,7 @@ def print_menu():
     if (items.item_key_3 in inventory) and not (has_printed_3):
         print("\n" + items.item_key_3['description'])
         has_printed_3 = True
+        gc.current_riddle = items.item_note1['riddle_4']
 
     if (items.item_key_4 in inventory) and not (has_printed_4):
         print("\n" + items.item_riddle_clock['description_2'])
@@ -420,6 +422,9 @@ def main():
     # display the menu to the player
     # take the user input
     user_input = input('>')
+
+    if user_input.lower() == 'quit':
+        exit()
 
     # normal the input
     normal_user_input = normal_input(user_input)
