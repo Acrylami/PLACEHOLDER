@@ -460,7 +460,7 @@ items_id = {
     'wardrobe':item_wardrobe,
     'desk': item_desk,
     'bed':item_bed,
-    'cot':item_bed,
+    'cot':item_cot,
     'doll':item_doll,
     'rack':item_rack,
     'photo':item_photo,
