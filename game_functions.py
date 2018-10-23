@@ -162,8 +162,8 @@ try:
                     inventory.append(item)
                     current_room['items'].remove(item)
 
-    except KeyError:
-        print('You cannot take this.')
+except KeyError:
+    print('You cannot take this.')
 
 
 def exe_interact(user_input_command):
