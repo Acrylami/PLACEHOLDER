@@ -254,7 +254,6 @@ beautiful
 beauty
 because
 become
-bed
 bedroom
 beer
 before
@@ -359,7 +358,6 @@ business
 busy
 but
 butter
-button
 buy
 buyer
 by
@@ -732,7 +730,6 @@ deserve
 design
 designer
 desire
-desk
 desperate
 despite
 destroy
@@ -1247,7 +1244,6 @@ height
 helicopter
 hell
 hello
-help
 helpful
 her
 here
@@ -1934,7 +1930,6 @@ physically
 physician
 piano
 pick
-picture
 pie
 piece
 pile
@@ -2609,7 +2604,6 @@ sweep
 sweet
 swim
 swing
-switch
 symbol
 symptom
 system
