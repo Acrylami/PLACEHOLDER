@@ -42,6 +42,9 @@ def game():
         gf.print_room()
         gf.print_menu()
         gf.main()
+        if rooms_id['main door']['opened']:
+            print('CONGRATULATIONS!!!!!')
+            break
         input('PRESS ENTER TO CONTINUE')
         os.system('cls')
 
