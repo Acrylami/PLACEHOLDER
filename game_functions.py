@@ -276,8 +276,16 @@ def exe_observe(user_input_command):
         print('You cannot observe this')
 
 
-def exe_help():
+def get_help(user_input):
     """Player type 'help' to see the instructions whenever they want"""
+    while user_input != 'help':
+        print("You need to type in 'help' to see the game instructions")
+        user_input = input('>')
+    else:
+        exe_help()
+
+
+def exe_help():
     print(items.item_title['Instructions'])
 
 
