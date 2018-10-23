@@ -1,19 +1,18 @@
-from rooms import rooms_id
-import player
+import rooms, player, items
 import game_functions as gf    # all functions are referred as 'gf' now
 import game_content as gc    # all dialogue are referred as 'gc' now
-import items
 import pygame
 import os
 import time
 
 
 # These variables are to be global
-current_room = rooms_id['lobby']
+current_room = rooms.rooms_id['lobby']
 pygame.mixer.init()
 current_dialogue = gc.filler_dialogue['description']
 background_music = pygame.mixer.Sound("OST.ogg")
 scream = pygame.mixer.Sound("scream.ogg")
+last_output = ""
 
 
 # all game loops
@@ -52,7 +51,6 @@ def game():
     background_music.play(-1)
 
     while True:
-
         # print the title of the game
         print(items.item_title['Title'])
 
@@ -69,19 +67,16 @@ def game():
         gf.print_menu()
 
         # checks for user input, and is a parser
-        gf.main()
+        gf.main_input()
 
         # checks to see if the user has opened the door, the user has won
         # the game
-        if rooms_id['main door']['opened']:
+        if rooms.rooms_id['main door']['opened']:
             print(items.item_paper['description_3'])
             scream.set_volume(1)
             scream.play()
             time.sleep(4)
             break
-
-        input('PRESS ENTER TO CONTINUE')
-
 
         # clear the screen after each run
         os.system('cls')
