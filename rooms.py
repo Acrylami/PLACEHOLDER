@@ -36,7 +36,7 @@ room_kitchen = {
 
     'items': [items.item_riddle_clock, ],
 
-    'items_not': [],
+    'items_not': [items.item_oven, items.item_fridge, ],
 
     'exits': {'east': 'lobby',},
 
@@ -68,7 +68,7 @@ room_nursery = {
     'items': [items.item_building_block, items.item_light_switch,
               items.item_pendulum],
 
-    'items_not': [],
+    'items_not': [items.item_bed, items.item_rack, items.item_cot,],
 
     'exits': {'east': 'landing floor', },
 
@@ -84,7 +84,7 @@ room_bedroom = {
     'items': [items.item_riddle_candle,
               items.item_matchsticks,],
 
-    'items_not': [],
+    'items_not': [items.item_wardrobe, items.item_desk, items.item_bed, items.item_picture,],
 
     'exits': {'west': 'landing floor', },
 
