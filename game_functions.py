@@ -255,7 +255,7 @@ def exe_interact(user_input_command):
             print('...')
 
     elif user_input_command == 'mirror':
-        if items.item_mirror in current_room['items']:
+        if items.item_mirror in current_room['items_not']:
             if (items.item_paper not in inventory) and (
                     items.item_building_block not in inventory):
                 print("You see your reflection")
