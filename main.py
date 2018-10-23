@@ -13,6 +13,7 @@ current_room = rooms_id['lobby']
 pygame.mixer.init()
 current_dialogue = gc.filler_dialogue['description']
 background_music = pygame.mixer.Sound("OST.ogg")
+scream = pygame.mixer.Sound("scream.ogg")
 
 
 # all game loops
@@ -30,14 +31,13 @@ def game():
     print(gc.opening_dialogue['description'])
     input(s.center(70))
     os.system('cls')
-
+    
     # ask the user for first help
     print("\n\n\n\n\n\n\n\n\n\n"
     "TYPE 'help' to see the game instructions")
     user_input = input('> ')
     gf.get_help(user_input)
-    print("You can TYPE 'help' anytime to see the game instructions")
-    input('PRESS ENTER TO CONTINUE')
+    input('\nPRESS ENTER TO CONTINUE')
     os.system('cls')
 
     # ask the user to do their first interact
@@ -74,7 +74,10 @@ def game():
         # checks to see if the user has opened the door, the user has won
         # the game
         if rooms_id['main door']['opened']:
-            print('CONGRATULATIONS')
+            print(items.item_paper['description_3'])
+            scream.set_volume(1)
+            scream.play()
+            time.sleep(4)
             break
 
         input('PRESS ENTER TO CONTINUE')
