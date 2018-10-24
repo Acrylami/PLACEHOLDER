@@ -9,9 +9,9 @@ opening_dialogue = {
 
     # all dialogue will follow this layout to outputted properly
     """\n\n\n\n\n\n\n\n\n\n         
-        You wake up with a start on the floor of the lobby, heart racing, head pounding. 
-        You don't remember how you got here, and overwhelming panic hits you. 
-        What happened last night?""",
+You wake up lying in a pool of blood on a hard wooden 
+ceiling. Next to you is a heavy locked door. There are 4 keyholes. 
+How did you get here? You must escape.""",
 }
 
 filler_dialogue = {
@@ -57,3 +57,4 @@ key4_player_thought = {
     barely think. I got to the top of the stairs and my head spun and spun and spun. I took the first step and my knees buckled under me.
     It all goes dark after that..."""
 }
+
