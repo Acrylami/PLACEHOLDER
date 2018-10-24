@@ -282,8 +282,7 @@ item_mirror = {
 item_bath = {
     'name': 'bath tub',
 
-    'description': 'It looks recently used, and upon closer inspection, '
-                  'has a dark stain at the bottom. You feel sick.',
+    'description': 'It looks recently used, and upon closer inspection, has a dark stain at the bottom. You feel sick.',
 }
 
 item_toilet = {
@@ -296,15 +295,13 @@ item_toilet = {
 item_cabinet = {
     'name': 'cabinet',
 
-    'description': 'Inside the cabinet are bottles of perfume, tablets, toothpaste and toothbrushes. '
-                    'You don\'t need to use these.',
+    'description': 'Inside the cabinet are bottles of perfume, tablets, toothpaste and toothbrushes. You don\'t need to use these.',
 }
 
 item_cot = {
     'name': 'cot',
 
-    'description': 'A small bed for a child, filled with blankets and stuffed toys. '
-                  'You knew it would be empty before you looked.',
+    'description': 'A small bed for a child, filled with blankets and stuffed toys. You knew it would be empty before you looked.',
 }
 
 item_doll = {
@@ -333,9 +330,7 @@ item_oven = {
 item_fridge = {
     'name': 'fridge',
 
-    'description': 'Colourful, cute stick figure drawings are fixed to the front with magnets. '
-                    'Looking at them makes you feel faintly sick, though you can\'t place why. '
-                    'Inside, food rots.',
+    'description': 'Colourful, cute stick figure drawings are fixed to the front with magnets. Looking at them makes you feel strangely sick.'
 }
 item_sink = {
     'name': 'sink',
@@ -345,8 +340,7 @@ item_sink = {
 item_wardrobe = {
     'name': 'wardrobe',
 
-    'description': 'Clothes have been ripped from their hangers, leaving the wardrobe bare. '
-                    'It looks as though someone packed in a hurry. Was it me?',
+    'description': 'Clothes have been ripped from their hangers. It looks as though someone packed in a hurry. Was it me?',
 }
 item_desk = {
     'name': 'desk',
@@ -356,8 +350,7 @@ item_desk = {
 item_bed = {
     'name': 'bed',
 
-    'description': 'It looks comfortable and soft, with plush cushions. '
-                  'You want to lie down, but are prevented by the mountain of clothes thrown over it.',
+    'description': 'You want to lie down, but are prevented by the mountain of clothes thrown over it.',
 }
 item_paper = {
 
