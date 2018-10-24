@@ -56,7 +56,7 @@ room_bathroom = {
 
     'exits': {'west': 'lobby'},
 
-    'door': True,
+    'door': False,
 
 }
 
