@@ -2,34 +2,34 @@ item_title = {
 
     'Title':
         """\n\n\n\n\n\n\n\n\n
-        ▄▄▄· ▄▄▄▄·  ▄· ▄▌.▄▄ · .▄▄ · 
-       ▐█ ▀█ ▐█ ▀█▪▐█▪██▌▐█ ▀. ▐█ ▀. 
-       ▄█▀▀█ ▐█▀▀█▄▐█▌▐█▪▄▀▀▀█▄▄▀▀▀█▄
-       ▐█ ▪▐▌██▄▪▐█ ▐█▀·.▐█▄▪▐█▐█▄▪▐█
-        ▀  ▀ ·▀▀▀▀   ▀ •  ▀▀▀▀  ▀▀▀▀ TM
-               ADVENTURE GAME""",
+ ▄▄▄· ▄▄▄▄·  ▄· ▄▌.▄▄ · .▄▄ · 
+▐█ ▀█ ▐█ ▀█▪▐█▪██▌▐█ ▀. ▐█ ▀. 
+▄█▀▀█ ▐█▀▀█▄▐█▌▐█▪▄▀▀▀█▄▄▀▀▀█▄
+ █ ▪▐▌██▄▪▐█ ▐█▀·.▐█▄▪▐█▐█▄▪▐█
+  ▀  ▀ ·▀▀▀▀   ▀ •  ▀▀▀▀  ▀▀▀▀ TM
+ADVENTURE GAME""",
 
     'Instructions':
         """
-    .-.---------------------------------.-.
-   ((o))         INSTRUCTIONS              )
-    \W/_______          _____         ____/
-     |                                  |
-     |  TYPE "go" TO NAVIGATE THROUGH   |
-     |              ROOMS               |
-     |                                  |
-     |  TYPE "take" TO PICK UP AN ITEM  |
-     |                                  |
-     |  TYPE "observe" TO EXAMINE AN    |
-     |                ITEM              |
-     |                                  |
-     |  IN ORDER TO SOLVE THE RIDDLES   |
-     |   YOU NEED TO "interact" WITH    |
-     |           THE OBJECT             |
-     |____    _______    __  ____    ___|
-    /A\                                  A
-   ((o))                                  )
-     '------------------------------------'"""
+ .-.---------------------------------.-.
+ ((o))         INSTRUCTIONS              )
+ \W/_______          _____         ____/
+ |                                  |
+ |  TYPE "go" TO NAVIGATE THROUGH   |
+ |              ROOMS               |
+ |                                  |
+ |  TYPE "take" TO PICK UP AN ITEM  |
+ |                                  |
+ |  TYPE "observe" TO EXAMINE AN    |
+ |                ITEM              |
+ |                                  |
+ |  IN ORDER TO SOLVE THE RIDDLES   |
+ |   YOU NEED TO "interact" WITH    |
+ |           THE OBJECT             |
+ |____    _______    __  ____    ___|
+ /A\                                  A
+((o))                                  )
+  '------------------------------------'"""
 
 }
 
@@ -41,79 +41,75 @@ item_note1 = {
     'description': 'A note with riddles on it',
 
     'riddle_1': """        
-    .-.---------------------------------.-.
-   ((o))                                   )
-    \W/_______          _____         ____/
-     |                                  |
-     |               NOTE               |
-     |                                  |
-     |     I'm tall when I'm young and  |
-     |      I'm short when I'm old.     |
-     |             What am I?           |
-     |                                  |
-     |____    _______    __  ____    ___|
-    /A\                                  A
-   ((o))                                  )
-     '------------------------------------                       
-    """,
+ .-.---------------------------------.-.
+ ((o))                                   )
+ \W/_______          _____         ____/
+ |                                  |
+ |               NOTE               |
+ |                                  |
+ |     I'm tall when I'm young and  |
+ |      I'm short when I'm old.     |
+ |             What am I?           |
+ |                                  |
+ |____    _______    __  ____    ___|
+ /A\                                  A
+((o))                                  )
+  '------------------------------------""",
 
     'riddle_2': """    
-    .-.---------------------------------.-.
-   ((o))                                   )
-    \W/_______          _____         ____/
-     |                                  |
-     |               NOTE               |
-     |                                  |
-     |   It cannot be seen, cannot be   |
-     | felt, Cannot be heard, cannot be |
-     | smelt. It lies behind stars and  |
-     |   under hills, And empty holes   |
-     |   it fills. It comes first and   |
-     |      follows after,Ends life,    |
-     |           kills laughter.        |
-     |__    _______    __  ____    ___  |
-    /A\                                 A
-   ((o))                                  )
-     '------------------------------------                       
-    """,
-
-    'riddle_3': """    
-    .-.---------------------------------.-.
-   ((o))                                   )
-    \W/_______          _____         ____/
-     |                                  |
-     |               NOTE               |
-     |                                  |
-     |   This thing all things devours: |
-     |  Birds, beasts, trees, flowers;  |
-     |      Gnaws iron, bites steel;    |
-     |     Grinds hard stones to meal;  |
-     |      Slays king, ruins town,     |
-     |    And beats high mountain down. |
-     |                                  |
-     | __    _______    __  ____    ___ |
-    /A\                                  A
-   ((o))                                  )
-     '------------------------------------                       
-    """,
+ .-.---------------------------------.-.
+ ((o))                                   )
+ \W/_______          _____         ____/
+ |                                  |
+ |               NOTE               |
+ |                                  |
+ |   It cannot be seen, cannot be   |
+ | felt, Cannot be heard, cannot be |
+ | smelt. It lies behind stars and  |
+ |   under hills, And empty holes   |
+ |   it fills. It comes first and   |
+ |      follows after,Ends life,    |
+ |           kills laughter.        |
+ |__    _______    __  ____    ___  |
+ /A\                                 A
+((o))                                  )
+  '------------------------------------""",
 
     'riddle_4': """    
-    .-.---------------------------------.-.
-   ((o))                                   )
-    \W/_______          _____         ____/
-     |                                  |
-     |               NOTE               |
-     |                                  |
-     |       This item can be used      |
-     |    To see what is right there    |
-     |      An evil queen used hers     |
-     |    To find out who’s most fair.  |
-     |                                  |
-     | __    _______    __  ____    ___ |
-    /A\                                  A
-   ((o))                                  )
-     '------------------------------------                       
-    """,
+ .-.---------------------------------.-.
+ ((o))                                   )
+ \W/_______          _____         ____/
+ |                                  |
+ |               NOTE               |
+ |                                  |
+ |   This thing all things devours: |
+ |  Birds, beasts, trees, flowers;  |
+ |      Gnaws iron, bites steel;    |
+ |     Grinds hard stones to meal;  |
+ |      Slays king, ruins town,     |
+ |    And beats high mountain down. |
+ |                                  |
+ | __    _______    __  ____    ___ |
+ /A\                                  A
+((o))                                  )
+  '------------------------------------""",
+
+    'riddle_3': """    
+.-.---------------------------------.-.
+ ((o))                                   )
+ \W/_______          _____         ____/
+ |                                  |
+ |               NOTE               |
+ |                                  |
+ |       This item can be used      |
+ |    To see what is right there    |
+ |      An evil queen used hers     |
+ |    To find out who’s most fair.  |
+ |                                  |
+ | __    _______    __  ____    ___ |
+ /A\                                  A
+((o))                                  )
+  '------------------------------------""",
 
 }
 
@@ -227,7 +223,8 @@ item_photo_frame = {
 &&&&&&@@@@@(@@@@/@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*@@@@&@@@@@@@@@@@@@
 &&@@&&@@@@@&@@@(@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/@@@@#@@@@@@@@@@@@@
 &&&@&&&@@@@@@@@(@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@&@@@@@@@@@@@@@
-&@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%@@@@@@@@@@@@@@@@@"""
+&@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%@@@@@@@@@@@@@@@@@
+KIRIIL KGB AGENT(1943)"""
 
 }
 
@@ -236,8 +233,7 @@ item_riddle_candle = {
 
     'description': 'A lone candle stands in solitary darkness.',
 
-    'description_2': 'You set the candle alight, the wax melts away to '
-                     'reveal a key lodged within it.',
+    'description_2': 'You set the candle alight, the wax melts away to reveal a key lodged within it.',
 
     'on': False,
 
@@ -257,8 +253,7 @@ item_riddle_clock = {
 
     'description': "A grandfather clock. I think it's missing something",
 
-    'description_2': "You've found the missing part for the clock."
-                     "The clock hands turn and point to 4:20"
+    'description_2': "You've found the missing part for the clock. The clock hands turn and point to 4:20"
 
 
 }
@@ -288,14 +283,14 @@ item_bath = {
 item_toilet = {
     'name': 'toilet',
 
-    'description': 'A toilet, you don\'t need to use this.',
+    'description': "A toilet, you don't need to use this.",
 }
 
 
 item_cabinet = {
     'name': 'cabinet',
 
-    'description': 'Inside the cabinet are bottles of perfume, tablets, toothpaste and toothbrushes. You don\'t need to use these.',
+    'description': "Inside the cabinet are bottles of perfume, tablets, toothpaste and toothbrushes. You don't need to use these.",
 }
 
 item_cot = {
@@ -313,13 +308,13 @@ item_doll = {
 item_rack = {
     'name': 'rack',
 
-    'description': 'A single dark brown coat hangs on the rack. It\'s mine.',
+    'description': "A single dark brown coat hangs on the rack. It's mine.",
 }
 
 item_picture = {
     'name': 'picture',
 
-    'description': 'A family photo. It brings back good memories. ',
+    'description': 'A family photo. It brings back good memories.',
 }
 
 item_oven = {
@@ -330,12 +325,12 @@ item_oven = {
 item_fridge = {
     'name': 'fridge',
 
-    'description': 'Colourful, cute stick figure drawings are fixed to the front with magnets. Looking at them makes you feel strangely sick.'
+    'description': 'Colourful, cute stick figure drawings are fixed to the front with magnets. Looking at them makes you feel strangely sick.',
 }
 item_sink = {
     'name': 'sink',
 
-    'description': 'Filled with grimy water. You don\'t want to touch this',
+    'description': "Filled with grimy water. You don't want to touch this",
 }
 item_wardrobe = {
     'name': 'wardrobe',
