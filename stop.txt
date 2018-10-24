@@ -1841,7 +1841,6 @@ ourselves
 out
 outcome
 outside
-oven
 over
 overall
 overcome
@@ -2411,7 +2410,6 @@ since
 sing
 singer
 single
-sink
 sir
 sister
 sit
