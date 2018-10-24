@@ -425,6 +425,7 @@ def print_menu():
         print(items.item_key_1['description'])
         has_printed_1 = True
         gc.current_riddle = items.item_note1['riddle_2']
+        #main.current_dialogue = gc.key1_player_thought['description']
 
     if (items.item_key_1 and items.item_key_2) in inventory and not (
             has_printed_2):
@@ -432,15 +433,18 @@ def print_menu():
         print(items.item_key_2['description'])
         has_printed_2 = True
         gc.current_riddle = items.item_note1['riddle_3']
+        #main.current_dialogue = gc.key2_player_thought['description']
 
     if (items.item_key_3 in inventory) and not (has_printed_3):
         print("\n" + items.item_key_3['description'])
         has_printed_3 = True
+        #main.current_dialogue = gc.key3_player_thought['description']
 
     if (items.item_key_4 in inventory) and not (has_printed_4):
         print("\n" + items.item_riddle_clock['description_2'])
         print(items.item_key_4['description'])
         has_printed_4 = True
+        #main.current_dialogue = gc.key4_player_thought['description']
 
 
 def main_input():
