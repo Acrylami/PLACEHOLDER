@@ -9,8 +9,9 @@ opening_dialogue = {
 
     # all dialogue will follow this layout to outputted properly
     """\n\n\n\n\n\n\n\n\n\n         
-You wake up lying in a pool of blood on a hard wooden 
-ceiling. Next to you is a heavy locked door. There are 4 keyholes. 
+You wake up lying in a pool of blood on a hard floor,
+staring up at a dimly lit chandelier covered in cobwebs on the ceiling.
+Next to you is a heavy locked door. There are 4 keyholes. 
 How did you get here? You must escape.""",
 }
 
