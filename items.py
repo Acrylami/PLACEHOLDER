@@ -282,75 +282,75 @@ item_mirror = {
 item_bath = {
     'name': 'bath tub',
 
-    'description': 'a bath tub,it looks recently used',
+    'description': 'It looks recently used, and upon closer inspection, has a dark stain at the bottom. You feel sick.',
 }
 
 item_toilet = {
     'name': 'toilet',
 
-    'description': 'there is a toilet',
+    'description': 'A toilet, you don\'t need to use this.',
 }
 
 
 item_cabinet = {
     'name': 'cabinet',
 
-    'description': 'there is a cabinet',
+    'description': 'Inside the cabinet are bottles of perfume, tablets, toothpaste and toothbrushes. You don\'t need to use these.',
 }
 
 item_cot = {
     'name': 'cot',
 
-    'description': 'A small bed for a child, filled with blankets and stuffed toys',
+    'description': 'A small bed for a child, filled with blankets and stuffed toys. You knew it would be empty before you looked.',
 }
 
 item_doll = {
     'name': 'doll',
 
-    'description': 'An old doll with a big smile',
+    'description': 'An old doll with a big smile. It only makes you more anxious.',
 }
 
 item_rack = {
     'name': 'rack',
 
-    'description': 'A coat rack',
+    'description': 'A single dark brown coat hangs on the rack. It\'s mine.',
 }
 
 item_picture = {
     'name': 'picture',
 
-    'description': 'A photo of a smiling couple and a child.',
+    'description': 'A family photo. It brings back good memories. ',
 }
 
 item_oven = {
     'name': 'oven',
 
-    'description': 'An oven, still warm',
+    'description': 'The oven is empty and is in need of a clean.',
 }
 item_fridge = {
     'name': 'fridge',
 
-    'description': 'a fridge with just an empty jar of mayonnaise on ir ',
+    'description': 'Colourful, cute stick figure drawings are fixed to the front with magnets. Looking at them makes you feel faintly sick, though you can\'t place why. Inside, food rots.',
 }
 item_sink = {
     'name': 'sink',
 
-    'description': 'dirty sink',
+    'description': 'Filled with grimy water. You don\'t want to touch this',
 }
 item_wardrobe = {
     'name': 'wardrobe',
 
-    'description': 'a bif old wardrobe with victorian clothes',
+    'description': 'Clothes have been ripped from their hangers, leaving the wardrobe bare. It looks as though someone packed in a hurry. Was it me?',
 }
 item_desk = {
     'name': 'desk',
 
-    'description': 'a writting desk cluttered, covered in nonsensical letters and drawings',
+    'description': 'The desk is cluttered, covered in nonsensical letters and drawings.',
 }
 item_bed = {
     'name': 'bed',
 
-    'description': 'a meesy bed',
+    'description': 'It looks comfortable and soft, with plush cushions. You want to lie down, but are prevented by the mountain of clothes thrown over it.',
 }
 item_paper = {
 
