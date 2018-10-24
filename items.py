@@ -399,7 +399,7 @@ item_paper = {
 
 
 
- - OH IT SEEMS THAT I HAVE TO BREAK THIS MIRROR
+ - OH IT SEEMS THAT I HAVE TO BREAK THIS MIRROR. I SHOULD LOOK FOR SOMETHING TO SMASH IT WITH.
 """,
 
     'description_3': """                                                                                                                                                                   
@@ -468,7 +468,7 @@ item_light_switch = {
     'description_2':
 """After turning the light off, the stars on the wallpaper illuminate. On
 one side of the room, there seems to be a large cluster of stars grouped
-together. You go towards it...
+together. You go towards it... A button has appeared.
 """,
 }
 
