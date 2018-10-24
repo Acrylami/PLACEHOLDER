@@ -8,11 +8,13 @@ import string
 import pygame
 import time
 
+
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
     print()
     print('You are in the ' + main.current_room['name'].upper())
     print(main.current_room['description'].upper())
+
 
 def print_dialogue():
     """Will take a form of dialogue as an argument, and display it properly"""
@@ -109,14 +111,16 @@ def exe_go(direction):
                     if direction == 'up' or direction == 'down':
                         footsteps.set_volume(0.8)
                         footsteps.play()
-                        main.current_room = move(main.current_room['exits'], direction)
+                        main.current_room = move(main.current_room['exits'],
+                                                 direction)
                     else:
                         opened.set_volume(0.8)
                         opened.play()
                         time.sleep(2)
                         footsteps.set_volume(0.8)
                         footsteps.play()
-                        main.current_room = move(main.current_room['exits'], direction)
+                        main.current_room = move(main.current_room['exits'],
+                                                 direction)
                 else:
                     main.last_output = "You cannot go there."
             else:
@@ -164,6 +168,7 @@ def exe_take(item_id):
 
         if item_in_room == items.item_riddle_candle:
             main.last_output = "It has no use to me, if it is not lit up"
+            return
 
         if item_in_room == items.item_button:
             main.last_output = 'you cannot take this.'
@@ -203,7 +208,8 @@ def exe_interact(user_input_command):
     if user_input_command == "candle":
         if items.item_riddle_candle in main.current_room['items']:
             if items.item_matchsticks in inventory:
-                if items.item_riddle_candle in main.current_room['items'] or inventory:
+                if items.item_riddle_candle in main.current_room[
+                    'items'] or inventory:
                     if user_input_command == items.item_riddle_candle['name']:
                         items.item_riddle_candle['on'] = True
                         if items.item_riddle_candle['on']:
@@ -237,14 +243,18 @@ def exe_interact(user_input_command):
     elif user_input_command == 'switch':
         if items.item_light_switch in main.current_room['items']:
             items.item_light_switch['switch'] = False
-            main.last_output = items.item_light_switch['description_2']
-            rooms.room_nursery['items_not'].append(items.item_button)
-            items.item_button['on'] = True
+            if len(rooms.room_nursery['items_not']) > 2:
+                main.last_output = 'The glowing button should be pressed...'
+                items.item_button['on'] = True
+            else:
+                main.last_output = items.item_light_switch['description_2']
+                rooms.room_nursery['items_not'].append(items.item_button)
+                items.item_button['on'] = True
         else:
             main.last_output = '...'
 
     elif user_input_command == 'button':
-        if items.item_button in main.current_room['items']:
+        if items.item_button in main.current_room['items_not']:
             if items.item_button['on']:
                 inventory.append(items.item_key_2)
                 got_key.play()
@@ -300,7 +310,7 @@ def exe_observe(user_input_command):
         item_to_observe = items_id[user_input_command]
 
         if item_to_observe in inventory:
-                main.last_output = item_to_observe['description']
+            main.last_output = item_to_observe['description']
 
         elif item_to_observe in main.current_room['items']:
             main.last_output = item_to_observe['description']
@@ -376,6 +386,7 @@ def interact_note(user_input):
     else:
         exe_interact('note')
 
+
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
     global has_printed_1
@@ -405,7 +416,7 @@ def print_menu():
 
     if gc.current_riddle != items.item_title['Instructions']:
         print(gc.current_riddle)
-    
+
     print(main.last_output)
     main.last_output = ""
 
@@ -415,7 +426,7 @@ def print_menu():
         has_printed_1 = True
         gc.current_riddle = items.item_note1['riddle_2']
 
-    if (items.item_key_1 and items.item_key_2) in inventory and not(
+    if (items.item_key_1 and items.item_key_2) in inventory and not (
             has_printed_2):
         print('\n' + items.item_button['description_2'])
         print(items.item_key_2['description'])
@@ -442,5 +453,5 @@ def main_input():
 
     # normal the input
     normal_user_input = normal_input(user_input)
-        
+
     exe_command(normal_user_input)
