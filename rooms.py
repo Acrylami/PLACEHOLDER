@@ -17,7 +17,11 @@ room_main_door = {
 room_lobby = {
     'name': 'main lobby',
 
-    'description': 'The lobby of your home. The lights are bright and unforgiving, hurting your eyes. An ornate coatrack stands in one corner of the room, at the foot of a winding staircase. A photo is mounted on the wall. ',
+    'description': """
+    The lobby of your home. The lights are bright and unforgiving, hurting your eyes. 
+    An ornate coatrack stands in one corner of the room, at the foot of a winding staircase. 
+    A photo is mounted on the wall. The main door is dead ahead, you don't remember adding all those locks.
+    """,
 
     'items': [],
 
@@ -32,7 +36,10 @@ room_lobby = {
 room_kitchen = {
     'name': 'kitchen',
 
-    'description': 'The room is spacious yet cluttered, dirty plates sit on the kitchen counter, pots and pans hang above the stove and an array of empty bottles litter the floor and worktop. You drank too much last night. There is an oven, fridge and a sink here.',
+    'description': """
+    The room is spacious yet cluttered, dirty plates sit on the kitchen counter, 
+    pots and pans hang above the stove and an array of empty bottles litter the floor and worktop. 
+    You drank too much last night. There is an oven, fridge and a sink here.""",
 
     'items': [items.item_riddle_clock, ],
 
@@ -47,7 +54,11 @@ room_kitchen = {
 room_bathroom = {
     'name': 'bathroom',
 
-    'description': 'An ornate bath is the centrepiece of this room, made of marble. The toilet and sink sit towards the right of the room. The basin of the sink has a faint pink tinge, and the floor is damp as though recently cleaned. Above the sink is a cabinet. The smell of bleach is thick in this room..',
+    'description': """
+    An ornate bath is the centrepiece of this room, made of marble. 
+    The toilet and sink sit towards the right of the room. 
+    The basin of the sink has a faint pink tinge, and the floor is damp as though recently cleaned. 
+    Above the sink is a cabinet. The smell of bleach is thick in this room.""",
 
     'items': [items.item_paper,],
 
@@ -63,7 +74,10 @@ room_bathroom = {
 room_nursery = {
     'name': 'nursery',
 
-    'description': 'The walls of this room are covered in a galaxy print, with a small cot in the corner of the room. Toys take up most of the floor space. You feel uncomfortable here.',
+    'description': """
+    The walls of this room are covered in a galaxy print, 
+    with a small cot in the corner of the room. 
+    Toys take up most of the floor space. You feel uncomfortable here.""",
 
     'items': [items.item_building_block, items.item_light_switch,],
 
@@ -78,7 +92,10 @@ room_nursery = {
 room_bedroom = {
     'name': 'bedroom',
 
-    'description': 'You open the door to the bedroom. A four poster canopy bed sits in the middle of the room with clothes strewn over it haphazardly. A wooden wardrobe stands to your left, open. To your right is a desk and a vanity. ',
+    'description': """
+    You open the door to the bedroom. 
+    A four poster canopy bed sits in the middle of the room with clothes strewn over it haphazardly. 
+    A wooden wardrobe stands to your left, open. To your right is a desk and a vanity.""",
 
     'items': [items.item_riddle_candle,
               items.item_matchsticks,
