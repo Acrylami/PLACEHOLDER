@@ -51,7 +51,8 @@ room_kitchen = {
 room_bathroom = {
     'name': 'bathroom',
 
-    'description': """An ornate bath is the centrepiece of this room, made of marble. The toilet and sink sit towards the right of the room. The basin of the sink has a faint pink tinge,
+    'description': """An ornate bath is the centrepiece of this room, made of marble. 
+    The toilet and sink sit towards the right of the room. The basin of the sink has a faint pink tinge,
     and the floor is damp as though recently cleaned. Above the sink is a cabinet.
     The smell of bleach is thick in this room..""",
 
