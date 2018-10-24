@@ -8,18 +8,26 @@ import string
 import pygame
 import time
 
+def print_centered(text, way = True):
+    # Will print the text centered, if way is True it prints simple text
+    if way:
+        print(text.center(main.terminal_width))
+    else:
+        text_list = text.split('\n')
+        for x in text_list:
+            print_centered(x)
+        
 
 def print_room():
     """Will take a room as an argument, and display all of its contents"""
     print()
-    print('You are in the ' + main.current_room['name'].upper())
-    print(main.current_room['description'].upper())
-
+    print_centered('You are in the ' + main.current_room['name'].upper())
+    print_centered(main.current_room['description'], False)
 
 def print_dialogue():
     """Will take a form of dialogue as an argument, and display it properly"""
     print()
-    print(main.current_dialogue.upper())
+    print_centered(main.current_dialogue, False)
     print()
 
 
@@ -52,7 +60,7 @@ def print_inventory(inventory):
             store_string = store_string + value['name'] + '.'
             break
         store_string = store_string + value['name'] + ', '
-    print('You have: ' + store_string)
+    print_centered('You have: ' + store_string)
 
 
 def no_whitespace(text):
@@ -111,16 +119,14 @@ def exe_go(direction):
                     if direction == 'up' or direction == 'down':
                         footsteps.set_volume(0.8)
                         footsteps.play()
-                        main.current_room = move(main.current_room['exits'],
-                                                 direction)
+                        main.current_room = move(main.current_room['exits'], direction)
                     else:
                         opened.set_volume(0.8)
                         opened.play()
                         time.sleep(2)
                         footsteps.set_volume(0.8)
                         footsteps.play()
-                        main.current_room = move(main.current_room['exits'],
-                                                 direction)
+                        main.current_room = move(main.current_room['exits'], direction)
                 else:
                     main.last_output = "You cannot go there."
             else:
@@ -208,8 +214,7 @@ def exe_interact(user_input_command):
     if user_input_command == "candle":
         if items.item_riddle_candle in main.current_room['items']:
             if items.item_matchsticks in inventory:
-                if items.item_riddle_candle in main.current_room[
-                    'items'] or inventory:
+                if items.item_riddle_candle in main.current_room['items'] or inventory:
                     if user_input_command == items.item_riddle_candle['name']:
                         items.item_riddle_candle['on'] = True
                         if items.item_riddle_candle['on']:
@@ -280,7 +285,7 @@ def exe_interact(user_input_command):
             main.last_output = '...'
 
     elif user_input_command == 'mirror':
-        if items.item_mirror in main.current_room['items']:
+        if items.item_mirror in main.current_room['items_not']:
             if (items.item_paper not in inventory) and (
                     items.item_building_block not in inventory):
                 main.last_output = "You see your reflection"
@@ -310,7 +315,7 @@ def exe_observe(user_input_command):
         item_to_observe = items_id[user_input_command]
 
         if item_to_observe in inventory:
-            main.last_output = item_to_observe['description']
+                main.last_output = item_to_observe['description']
 
         elif item_to_observe in main.current_room['items']:
             main.last_output = item_to_observe['description']
@@ -327,10 +332,12 @@ def exe_observe(user_input_command):
 def get_help(user_input):
     """Player type 'help' to see the instructions whenever they want"""
     while user_input != 'help':
-        print("You need to type in 'help' to see the game instructions")
+        print_centered("You need to type in 'help' to see the game instructions")
         user_input = input('>')
     else:
-        print(items.item_title['Instructions'])
+        pickup_note = pygame.mixer.Sound("note.ogg")
+        pickup_note.play()
+        print_centered(items.item_title['Instructions'], False)
 
 
 def exe_help():
@@ -381,11 +388,10 @@ def interact_note(user_input):
     """Function specific for the opening dialogue"""
 
     while user_input != 'interact note':
-        print("You need to type in 'interact note' to see your first riddle")
+        print_centered("You need to type in 'interact note' to see your first riddle")
         user_input = input('>')
     else:
         exe_interact('note')
-
 
 def print_menu():
     """Will output the items in the room and also the player's inventory"""
@@ -394,55 +400,73 @@ def print_menu():
     global has_printed_3
     global has_printed_4
 
-    print("\nThere is in this room: ")
+    print()
+    print_centered("There is in this room: ")
 
     for values in main.current_room['items']:
-        print(values.get('name'))
+        print_centered(values.get('name'))
 
     if main.current_room['items_not']:
         for values in main.current_room['items_not']:
             if values == items.item_button:
                 if items.item_light_switch['switch'] == False:
-                    print(values.get('name'))
+                    print_centered(values.get('name'))
             else:
-                print(values.get('name'))
+                print_centered(values.get('name'))
 
-    print('\nYou can: (go/take/interact/observe/help)')
+    print()
+    print_centered('You can: (go/take/interact/observe/help)')
     for direction, exit in main.current_room['exits'].items():
         if rooms.rooms_id[exit]['door']:
-            print('GO ' + direction + ' to ' + exit)
+            print_centered(('GO ' + direction + ' to ' + exit))
         else:
-            print('GO ' + direction + ' to ' + exit + " (LOCKED)")
+            print_centered(('GO ' + direction + ' to ' + exit + " (LOCKED)"))
 
     if gc.current_riddle != items.item_title['Instructions']:
-        print(gc.current_riddle)
-
-    print(main.last_output)
-    main.last_output = ""
+        print_centered(gc.current_riddle, False)
+    
+    if main.last_output == items.item_light_switch['description_2'] or items.item_title['Instructions']:
+        print_centered(main.last_output, False)
+        main.last_output = ""
+    elif main.last_output == items.item_paper['description_2'] or items.item_paper['description']:
+        print_centered(main.last_output, False)
+        main.last_output = ""
+    elif main.last_output == items.item_matchsticks['description']:
+        print_centered(main.last_output, False)
+        main.last_output = ""
+    else:
+        print_centered(main.last_output)
+        main.last_output = ""
 
     if (items.item_key_1 in inventory) and not (has_printed_1):
-        print("\n" + items.item_riddle_candle['description_2'])
-        print(items.item_key_1['description'])
+        print()
+        print_centered(items.item_riddle_candle['description_2'])
+        print_centered(items.item_key_1['description'], False)
         has_printed_1 = True
         gc.current_riddle = items.item_note1['riddle_2']
         main.current_dialogue = gc.key1_player_thought['description']
 
-    if (items.item_key_1 and items.item_key_2) in inventory and not (
+    if (items.item_key_1 and items.item_key_2) in inventory and not(
             has_printed_2):
-        print('\n' + items.item_button['description_2'])
-        print(items.item_key_2['description'])
+        print()
+        print_centered(items.item_button['description_2'], False)
+        print_centered(items.item_key_2['description'], False)
         has_printed_2 = True
         gc.current_riddle = items.item_note1['riddle_3']
         main.current_dialogue = gc.key2_player_thought['description']
 
     if (items.item_key_3 in inventory) and not (has_printed_3):
-        print("\n" + items.item_key_3['description'])
+        print()
+        print_centered(items.item_key_3['description'], False)
+        gc.current_riddle = items.item_note1['riddle_4']
         has_printed_3 = True
         main.current_dialogue = gc.key3_player_thought['description']
 
     if (items.item_key_4 in inventory) and not (has_printed_4):
-        print("\n" + items.item_riddle_clock['description_2'])
-        print(items.item_key_4['description'])
+        print()
+        print_centered(items.item_riddle_clock['description_2'], False)
+        print_centered(items.item_key_4['description'], False)
+        gc.current_riddle = ""
         has_printed_4 = True
         main.current_dialogue = gc.key4_player_thought['description']
 
@@ -453,9 +477,10 @@ def main_input():
     corrected for the exe commands to work correctly"""
     # display the menu to the player
     # take the user input
-    user_input = input('>')
+    #print("\033[0;" + str(int(main.terminal_width/2)) + "H")
+    user_input = input('> ') 
 
     # normal the input
     normal_user_input = normal_input(user_input)
-
+        
     exe_command(normal_user_input)
