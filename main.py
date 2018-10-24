@@ -9,11 +9,12 @@ import time
 # These variables are to be global
 current_room = rooms.rooms_id['lobby']
 pygame.mixer.init()
-current_dialogue = gc.filler_dialogue['description']
+current_dialogue = gc.filler_dialogue['description'].upper()
 background_music = pygame.mixer.Sound("OST.ogg")
 scream = pygame.mixer.Sound("scream.ogg")
 last_output = ""
-
+terminal_width = os.get_terminal_size().columns
+pickup_note = pygame.mixer.Sound("note.ogg")
 
 # all game loops
 # and events are tested and ran here
@@ -21,27 +22,30 @@ last_output = ""
 def game():
     # print title of game
     os.system('cls')
-    print(items.item_title['Title'])
-    s = "PRESS ENTER TO CONTINUE"
-    input(s.center(44))
+    gf.print_centered(items.item_title['Title'], False)
+    enter = 'PRESS ENTER TO CONTINUE'
+    input(enter.center(terminal_width))
     os.system('cls')
 
     # print the opening dialogue of game
-    print(gc.opening_dialogue['description'])
-    input(s.center(70))
+
+    gf.print_centered(gc.opening_dialogue['description'], False)
+    input(enter.center(terminal_width))
     os.system('cls')
     
     # ask the user for first help
-    print("\n\n\n\n\n\n\n\n\n\n"
-    "TYPE 'help' to see the game instructions")
+    s = "TYPE 'help' to see the game instructions"
+    print("\n\n\n\n\n\n\n\n\n\n" + s.center(terminal_width))
+    #print("\033[" + str(int(terminal_width/2)) + ";H")
     user_input = input('> ')
     gf.get_help(user_input)
-    input('\nPRESS ENTER TO CONTINUE')
+    print("You can TYPE 'help' anytime to see the game instructions".center(terminal_width))
+    input(enter.center(terminal_width))
     os.system('cls')
 
     # ask the user to do their first interact
-    print("\n\n\n\n\n\n\n\n\n\nYou have a note in your pocket, "
-          "TYPE 'interact note' to see your first riddle.")
+    s = "You have a note in your pocket, TYPE 'interact note' to see your first riddle."
+    print("\n\n\n\n\n\n\n\n\n\n" + s.center(terminal_width))
     user_input = input('>')
     gf.interact_note(user_input)
     os.system('cls')
@@ -52,7 +56,9 @@ def game():
 
     while True:
         # print the title of the game
-        print(items.item_title['Title'])
+        print_startscreen = items.item_title['Title'].split('\n')
+        for x in print_startscreen:
+            print(x.center(terminal_width))
 
         # print the dialogue for user events
         gf.print_dialogue()
